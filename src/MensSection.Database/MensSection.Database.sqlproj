@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MensSection.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{6de25c47-507d-4ff0-8bfa-6fcbef75eacd}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MensSection.Database</RootNamespace>
+    <AssemblyName>MensSection.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="ms\" />
+    <Folder Include="ms\Tables\" />
+    <Folder Include="ms\Views\" />
+    <Folder Include="ms\Functions\" />
+    <Folder Include="ms\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="ms\Tables\TourPlayer.sql" />
+    <Build Include="ms\Tables\MatchResult.sql" />
+    <Build Include="ms\Tables\NearestPin.sql" />
+    <Build Include="ms\Tables\LeagueMatch.sql" />
+    <Build Include="ms\Tables\Matchform.sql" />
+    <Build Include="ms\Tables\LeagueTeam.sql" />
+    <Build Include="ms\Tables\League.sql" />
+    <Build Include="ms\Tables\CourseTee.sql" />
+    <Build Include="ms\Tables\CourseDetail.sql" />
+    <Build Include="ms\Tables\Club.sql" />
+    <Build Include="ms\Tables\Course.sql" />
+    <Build Include="ms\Tables\Property.sql" />
+    <Build Include="ms\Tables\Tour.sql" />
+    <Build Include="ms\Tables\Match.sql" />
+    <Build Include="ms\Tables\Player.sql" />
+    <Build Include="ms\Tables\MemberShip.sql" />
+    <Build Include="ms\Tables\Competition.sql" />
+    <Build Include="ms\Tables\CompetitionResult.sql" />
+    <Build Include="ms\Views\vCourseInfo.sql" />
+    <Build Include="ms\Views\vMembers.sql" />
+    <Build Include="ms\Views\vMatchResult.sql" />
+    <Build Include="ms\Views\vPlayer.sql" />
+    <Build Include="ms\Views\vNearestPin.sql" />
+    <Build Include="ms\Views\vLeagueMatch.sql" />
+    <Build Include="ms\Views\vMembers2.sql" />
+    <Build Include="ms\Views\vMatchSeason.sql" />
+    <Build Include="ms\Views\vMatch.sql" />
+    <Build Include="ms\Views\vLeagueTeam.sql" />
+    <Build Include="ms\Views\vTee.sql" />
+    <Build Include="ms\Views\vCourse.sql" />
+    <Build Include="ms\Views\vTour.sql" />
+    <Build Include="ms\Views\vCompetitionResult.sql" />
+    <Build Include="ms\Functions\HcpGroup.sql" />
+    <Build Include="ms\Functions\PlayerNameGroup.sql" />
+    <Build Include="ms\Functions\HcpGroupBorder.sql" />
+    <Build Include="ms\Functions\fnMatchSeason.sql" />
+    <Build Include="ms\Stored Procedures\TeeUpsert.sql" />
+    <Build Include="ms\Stored Procedures\ClubCourses.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="ms\Stored Procedures\ClubUpsert.sql" />
+    <Build Include="ms\Stored Procedures\TourUpsert.sql" />
+    <Build Include="ms\Stored Procedures\TourSelectByID.sql" />
+    <Build Include="ms\Stored Procedures\TourPlayerSelect.sql" />
+    <Build Include="ms\Stored Procedures\TourChangeRegistration.sql" />
+    <Build Include="ms\Stored Procedures\RankStableford.sql" />
+    <Build Include="ms\Stored Procedures\RankSimulator.sql" />
+    <Build Include="ms\Stored Procedures\RankShootOut.sql" />
+    <Build Include="ms\Stored Procedures\RankPuts.sql" />
+    <Build Include="ms\Stored Procedures\RankOverall.sql" />
+    <Build Include="ms\Stored Procedures\RankNetto.sql" />
+    <Build Include="ms\Stored Procedures\RankNearestPin.sql" />
+    <Build Include="ms\Stored Procedures\RankHallington.sql" />
+    <Build Include="ms\Stored Procedures\RankDamstahl.sql" />
+    <Build Include="ms\Stored Procedures\RankBrutto.sql" />
+    <Build Include="ms\Stored Procedures\RankBirdies.sql" />
+    <Build Include="ms\Stored Procedures\PropertySelectById.sql" />
+    <Build Include="ms\Stored Procedures\PropertySelectAll.sql" />
+    <Build Include="ms\Stored Procedures\PlayerUpsert.sql" />
+    <Build Include="ms\Stored Procedures\PlayerUpdateHcp.sql" />
+    <Build Include="ms\Stored Procedures\PlayerSelectAll.sql" />
+    <Build Include="ms\Stored Procedures\NearestPinUpsert.sql" />
+    <Build Include="ms\Stored Procedures\MemberShipUpsert.sql" />
+    <Build Include="ms\Stored Procedures\MemberShipSelectSeason.sql" />
+    <Build Include="ms\Stored Procedures\MemberShipSelectAll.sql" />
+    <Build Include="ms\Stored Procedures\MatchUpsert.sql" />
+    <Build Include="ms\Stored Procedures\MatchSelectById.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultUpsert.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSettleByStroke.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSettleByPoints.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSettleByHallington.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSetHcpGroup.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSetDamstahlPoints.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectWinners.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectWinner.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectDates.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectByStrokes.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectByPoints.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectById.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultSelectBirdieString.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultRanking.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultNearestPin.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultListForRegistration.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultForMemberRegistration.sql" />
+    <Build Include="ms\Stored Procedures\MatchResultForMember.sql" />
+    <Build Include="ms\Stored Procedures\MatchplayMatchUpsert.sql" />
+    <Build Include="ms\Stored Procedures\MatchplayMatch2Upsert.sql" />
+    <Build Include="ms\Stored Procedures\LeagueTeamUpsert.sql" />
+    <Build Include="ms\Stored Procedures\LeagueTeamDoubleUpsert.sql" />
+    <Build Include="ms\Stored Procedures\LeagueMatchUpsertSingle.sql" />
+    <Build Include="ms\Stored Procedures\CourseUpsert.sql" />
+    <Build Include="ms\Stored Procedures\CourseTeeSelectForCourse.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="ms\Stored Procedures\CourseDetailUpsert.sql" />
+    <Build Include="ms\Stored Procedures\CompetitionResultUpsert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="ms\Stored Procedures\CompetitionResults.sql" />
+    <Build Include="ms\Stored Procedures\Cleanup2yearsOld.sql" />
+    <Build Include="Security\ms.sql" />
+  </ItemGroup>
+</Project>
