@@ -21,7 +21,7 @@ public class PlayerEndpoint : IEndpointDefinition
     public void DefineEndpoints(WebApplication app)
     {
         app.MapGet("api/v1/player", GetSeasonPlayers);
-        app.MapGet("api/v1/player/{playerId}", GetPlayer);
+        app.MapGet("api/v1/player/{vgcNo}", GetPlayer);
         app.MapPost("api/v1/player", UpsertPlayer);
         app.MapPut("api/v1/player", UpsertPlayer);
     }
@@ -41,9 +41,9 @@ public class PlayerEndpoint : IEndpointDefinition
         }
         return Results.NotFound();
     }
-    internal async Task<IResult> GetPlayer(IRepository repo, [FromQuery(Name = "playerId")] int playerId)
+    internal async Task<IResult> GetPlayer(IRepository repo, [FromQuery(Name = "vgcNo")] int vgcNo)
     {
-        var model = await repo.GetPlayer(playerId);
+        var model = await repo.GetPlayer(vgcNo);
         if (model != null)
         {
             return Results.Ok(mapper.Map<PlayerDto>(model));
@@ -57,7 +57,7 @@ public class PlayerEndpoint : IEndpointDefinition
         if (model != null) {
             return Results.Ok(mapper.Map<PlayerDto>(model));
         }
-        return Results.Created($"api/v1/player/{model?.PlayerId}", model);
+        return Results.Created($"api/v1/player/{model?.VgcNo}", model);
     }
     #endregion
 }
