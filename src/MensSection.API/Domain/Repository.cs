@@ -263,5 +263,73 @@ namespace MensSection.Api.Domain
             return model;
         }
         #endregion
+
+        #region Player
+        public async Task<IEnumerable<Player>> GetPlayers(int season)
+        {
+            DateTime start = new DateTime(season, 1, 1);
+            string sql = @"SELECT [VgcNo],[FirstName],[LastName],[ZipCode],[City],[Address],[Email],
+                [Sponsor],[Phone],[CellPhone],[HcpIndex],[Fee],[Insurance],[Season],[Eclectic],[HcpUpdated],
+                [LastUpdate],[PlayerId],[MemberShipId], [NameGroup] 
+                FROM ms.vPlayer 
+                WHERE [Season]=@Season 
+                ORDER BY [NameGroup], [LastName]";
+
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+                return await db.QueryAsync<Player>(sql, new { season });
+        }
+        public async Task<Player?> GetPlayer(int playerId)
+        {
+            string sql = @"SELECT Top(1) [VgcNo],[FirstName],[LastName],[ZipCode],[City],[Address],[Email]," +
+                "[Sponsor],[Phone],[CellPhone],[HcpIndex],[HcpUpdated]," +
+                "[LastUpdate],[PlayerId] " +
+                "FROM ms.Player where [PlayerId]=@playerId";
+
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+                return (Player?)(await db.QueryAsync<Player>(sql, new { playerId })).FirstOrDefault();
+        }
+        public async Task<Player?> GetPlayerByVgcNo(int vgcNo)
+        {
+            string sql = @"SELECT Top(1) [VgcNo],[FirstName],[LastName],[ZipCode],[City],[Address],[Email]," +
+                "[Sponsor],[Phone],[CellPhone],[HcpIndex],[HcpUpdated]," +
+                "[LastUpdate],[PlayerId] " +
+                "FROM ms.Player where vgcNo=@VgcNo";
+
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+                return (Player?)(await db.QueryAsync<Player>(sql, new { vgcNo })).FirstOrDefault();
+        }
+
+
+        public async Task<Player> PlayerUpsert(Player model)
+        {
+            using var con = new SqlConnection(ConnectionString);
+
+            using var cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "[dbo].[PlayerUpsert]";
+            //cmd.Parameters.AddWithValue("MatchId", model.MatchId).Direction = ParameterDirection.InputOutput;
+            //cmd.Parameters.AddWithValue("MatchDate", model.MatchDate);
+            //cmd.Parameters.AddWithValue("MatchformId", model.MatchformId);
+            //cmd.Parameters.AddWithValue("CourseDetailId", model.CourseDetailId);
+            //cmd.Parameters.AddWithValue("Par", model.Par);
+            //cmd.Parameters.AddWithValue("Description", model.MatchText);
+            //cmd.Parameters.AddWithValue("Sponsor", model.Sponsor);
+            //cmd.Parameters.AddWithValue("SponsorLogoId", model.SponsorLogoId);
+            //cmd.Parameters.AddWithValue("Remarks", model.Remarks);
+            //cmd.Parameters.AddWithValue("Official", model.Official);
+            //cmd.Parameters.AddWithValue("Shootout", model.Shootout);
+            //cmd.Parameters.AddWithValue("Official", model.Official);
+            //cmd.Parameters.AddWithValue("timestamp", model.timestamp);
+
+            cmd.CommandTimeout = 240;
+            con.Open();
+            await cmd.ExecuteNonQueryAsync();
+
+            model.PlayerId = (int)cmd.Parameters["PlayerId"].Value;
+            return model;
+        }
+
+        #endregion
+
     }
 }

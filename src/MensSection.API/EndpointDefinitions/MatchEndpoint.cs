@@ -12,7 +12,7 @@ public class MatchEndpoint : IEndpointDefinition
     {
         mapper = new MapperConfiguration(cfg =>
         {
-            cfg.CreateMap<Match, MatchDto>()
+            cfg.CreateMap<Player, PlayerDto>()
                 //.ForMember(dest => dest.Year,
                 //            opts => opts.MapFrom(src => new DateTime(src.Year, 1, 1)))
                 //.ForMember(dest => dest.ConsumptionkWh,

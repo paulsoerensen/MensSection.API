@@ -30,4 +30,10 @@ public interface IRepository
     Task<IEnumerable<Match>> GetSeasonMatchList(int season);
     Task<Match> MatchUpsert(Match dto);
     #endregion
+
+    #region Player
+    Task<IEnumerable<Player>> GetPlayers(int season);
+    Task<Player?> GetPlayer(int playerId);
+    Task<Player> PlayerUpsert(Player model);
+    #endregion
 }
