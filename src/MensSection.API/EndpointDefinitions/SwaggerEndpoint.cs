@@ -20,7 +20,7 @@ public class SwaggerEndpoint : IEndpointDefinition
         {
             c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
             { 
-                Title = "Mens Section API",
+                Title = "Mens Section Api",
                 Version = "v1"
             });
         });

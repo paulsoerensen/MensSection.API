@@ -3,6 +3,6 @@
     public class ClubDto
     {
         public int ClubId { get; set; }
-        public string ClubName { get; set; }
+        public string? ClubName { get; set; }
     }
 }
