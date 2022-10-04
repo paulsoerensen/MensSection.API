@@ -1,9 +1,9 @@
 using AutoMapper;
-using MensSection.Api.Domain;
-using MensSection.Api.Dtos;
-using MensSection.Api.Models;
+using MensSection.API.Domain;
+using MensSection.API.Dtos;
+using MensSection.API.Models;
 
-namespace MensSection.Api.EndpointDefinitions;
+namespace MensSection.API.EndpointDefinitions;
 
 public class ClubEndpoint : IEndpointDefinition
 {
@@ -99,7 +99,7 @@ public class ClubEndpoint : IEndpointDefinition
     }
     internal IResult UpsertCourse(IRepository repo, Club dto)
     {
-        var model = mapper.Map<MensSection.Api.Models.Club>(dto);
+        var model = mapper.Map<MensSection.API.Models.Club>(dto);
         model = repo.ClubUpsert(model).Result;
         if (model != null)
         {

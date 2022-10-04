@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MensSection.Api.Models
+namespace MensSection.API.Models
 {
     public class Property
     {

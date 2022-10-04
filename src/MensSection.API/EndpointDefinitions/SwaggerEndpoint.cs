@@ -1,14 +1,14 @@
 
-using MensSection.Api.Domain;
+using MensSection.API.Domain;
 
-namespace  MensSection.Api.EndpointDefinitions;
+namespace  MensSection.API.EndpointDefinitions;
 
 public class SwaggerEndpoint : IEndpointDefinition
 {
     public void DefineEndpoints(WebApplication app)
     {
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MensSection.Api"));
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MensSection.API"));
 
     }
     private static bool alreadyAdded;
@@ -20,7 +20,7 @@ public class SwaggerEndpoint : IEndpointDefinition
         {
             c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
             { 
-                Title = "Mens Section Api",
+                Title = "Mens Section API",
                 Version = "v1"
             });
         });

@@ -1,7 +1,7 @@
-using MensSection.Api.Domain;
+using MensSection.API.Domain;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using MensSection.Api.EndpointDefinitions;
+using MensSection.API.EndpointDefinitions;
 
 var builder = WebApplication.CreateBuilder(args);
 

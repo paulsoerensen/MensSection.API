@@ -5,7 +5,7 @@ using System.Web;
 using System.Runtime.Serialization;
 
 
-namespace MensSection.Api.Models
+namespace MensSection.API.Models
 {
 	public class Membership
 	{

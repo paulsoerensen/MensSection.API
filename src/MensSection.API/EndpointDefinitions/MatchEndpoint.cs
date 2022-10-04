@@ -1,9 +1,9 @@
 using AutoMapper;
-using MensSection.Api.Domain;
-using MensSection.Api.Dtos;
-using MensSection.Api.Models;
+using MensSection.API.Domain;
+using MensSection.API.Dtos;
+using MensSection.API.Models;
 
-namespace MensSection.Api.EndpointDefinitions;
+namespace MensSection.API.EndpointDefinitions;
 
 public class MatchEndpoint : IEndpointDefinition
 {

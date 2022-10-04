@@ -1,8 +1,8 @@
 using AutoMapper;
-using MensSection.Api.Dtos;
-using MensSection.Api.Models;
+using MensSection.API.Dtos;
+using MensSection.API.Models;
 
-namespace MensSection.Api.Profiles
+namespace MensSection.API.Profiles
 {
     public class MatchProfile: Profile
     {

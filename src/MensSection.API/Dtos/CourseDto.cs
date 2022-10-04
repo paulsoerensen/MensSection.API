@@ -1,4 +1,4 @@
-﻿namespace MensSection.Api.Dtos
+﻿namespace MensSection.API.Dtos
 {
     public class CourseDto
     {

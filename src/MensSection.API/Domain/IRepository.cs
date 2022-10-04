@@ -1,7 +1,7 @@
-using MensSection.Api.Models;
+using MensSection.API.Models;
 
 
-namespace MensSection.Api.Domain;
+namespace MensSection.API.Domain;
 
 public interface IRepository
 {

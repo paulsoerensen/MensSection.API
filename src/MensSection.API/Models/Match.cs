@@ -1,5 +1,5 @@
 
-namespace MensSection.Api.Models
+namespace MensSection.API.Models
 {
     public class Match
     {
