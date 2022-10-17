@@ -23,7 +23,6 @@ public interface IRepository
     Task<ListEntry> TeeUpsert(ListEntry model);
     #endregion
 
-
     #region Match
     Task<Match?> GetMatch(int matchId);
     Task<IEnumerable<Match>> GetMatchList();
@@ -35,5 +34,12 @@ public interface IRepository
     Task<IEnumerable<Player>> GetPlayers(int season);
     Task<Player?> GetPlayer(int playerId);
     Task<Player> PlayerUpsert(Player model);
+    #endregion
+
+    #region User
+    Task<User?> UserUpsert(User model);
+    Task<User?> GetUserByEmail(string email);
+    Task<User?> GetUserByToken(string token);
+    Task<User?> GetUserByResetToken(string token);
     #endregion
 }

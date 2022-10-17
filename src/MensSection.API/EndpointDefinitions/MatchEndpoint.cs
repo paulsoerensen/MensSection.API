@@ -23,10 +23,10 @@ public class MatchEndpoint : IEndpointDefinition
 
     public void DefineEndpoints(WebApplication app)
     {
-        app.MapGet("api/v1/match/{id}", GetMatch);
-        app.MapGet("api/v1/match", GetMatches); 
-        app.MapGet("api/v1/match/season/{season}", GetSeasonMatches); 
-        app.MapPost("api/v1/match", UpsertMatch);      
+        app.MapGet("api/match/{id}", GetMatch);
+        app.MapGet("api/match", GetMatches); 
+        app.MapGet("api/match/season/{season}", GetSeasonMatches); 
+        app.MapPost("api/match", UpsertMatch);      
     }
 
     public void DefineServices(IServiceCollection services)
@@ -67,7 +67,7 @@ public class MatchEndpoint : IEndpointDefinition
         if (model != null) {
             return Results.Ok(mapper.Map<MatchDto>(model));
         }
-        return Results.Created($"api/v1/match/{model?.MatchId}", model);
+        return Results.Created($"api/match/{model?.MatchId}", model);
     }        
 }
 

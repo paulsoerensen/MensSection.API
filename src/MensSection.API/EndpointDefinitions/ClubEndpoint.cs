@@ -26,19 +26,19 @@ public class ClubEndpoint : IEndpointDefinition
     }
     public void DefineEndpoints(WebApplication app)
     {
-        app.MapGet("api/v1/club", GetClubs);
-        app.MapGet("api/v1/club/{clubId}", GetClub);
-        app.MapPost("api/v1/club", UpsertClub);
-        app.MapPut("api/v1/club", UpsertClub);
+        app.MapGet("api/club", GetClubs);
+        app.MapGet("api/club/{clubId}", GetClub);
+        app.MapPost("api/club", UpsertClub);
+        app.MapPut("api/club", UpsertClub);
 
-        app.MapGet("api/v1/club/{clubId}/course", GetCourses);
-        app.MapPost("api/v1/club/{clubId}/course", UpsertCourse);
-        app.MapPut("api/v1/club/{clubId}/course", UpsertCourse);
+        app.MapGet("api/club/{clubId}/course", GetCourses);
+        app.MapPost("api/club/{clubId}/course", UpsertCourse);
+        app.MapPut("api/club/{clubId}/course", UpsertCourse);
 
-        app.MapGet("api/v1/tee", GetTees);
-        app.MapGet("api/v1/tee/{teeId}", GetTee);
-        app.MapPost("api/v1/tee", UpsertTee);
-        app.MapPut("api/v1/tee", UpsertTee);
+        app.MapGet("api/tee", GetTees);
+        app.MapGet("api/tee/{teeId}", GetTee);
+        app.MapPost("api/tee", UpsertTee);
+        app.MapPut("api/tee", UpsertTee);
     }
 
     public void DefineServices(IServiceCollection services)
@@ -73,7 +73,7 @@ public class ClubEndpoint : IEndpointDefinition
         if (model != null) {
             return Results.Ok(mapper.Map<ClubDto>(model));
         }
-        return Results.Created($"api/v1/club/{model?.ClubId}", model);
+        return Results.Created($"api/club/{model?.ClubId}", model);
     }
     #endregion
 
@@ -105,7 +105,7 @@ public class ClubEndpoint : IEndpointDefinition
         {
             return Results.Ok(mapper.Map<ClubDto>(model));
         }
-        return Results.Created($"api/v1/{model?.ClubId}/course/{model?.ClubId}", model);
+        return Results.Created($"api/{model?.ClubId}/course/{model?.ClubId}", model);
     }
 
     #endregion
@@ -148,7 +148,7 @@ public class ClubEndpoint : IEndpointDefinition
         {
             return Results.Ok(mapper.Map<ClubDto>(model));
         }
-        return Results.Created($"api/v1/{model?.ClubId}/course/{model?.ClubId}", model);
+        return Results.Created($"api/{model?.ClubId}/course/{model?.ClubId}", model);
     }
     #endregion
 }

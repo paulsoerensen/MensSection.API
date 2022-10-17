@@ -20,10 +20,10 @@ public class PlayerEndpoint : IEndpointDefinition
     }
     public void DefineEndpoints(WebApplication app)
     {
-        app.MapGet("api/v1/player", GetSeasonPlayers);
-        app.MapGet("api/v1/player/{vgcNo}", GetPlayer);
-        app.MapPost("api/v1/player", UpsertPlayer);
-        app.MapPut("api/v1/player", UpsertPlayer);
+        app.MapGet("api/player", GetSeasonPlayers);
+        app.MapGet("api/player/{vgcNo}", GetPlayer);
+        app.MapPost("api/player", UpsertPlayer);
+        app.MapPut("api/player", UpsertPlayer);
     }
 
     public void DefineServices(IServiceCollection services)
@@ -57,7 +57,7 @@ public class PlayerEndpoint : IEndpointDefinition
         if (model != null) {
             return Results.Ok(mapper.Map<PlayerDto>(model));
         }
-        return Results.Created($"api/v1/player/{model?.VgcNo}", model);
+        return Results.Created($"api/player/{model?.VgcNo}", model);
     }
     #endregion
 }

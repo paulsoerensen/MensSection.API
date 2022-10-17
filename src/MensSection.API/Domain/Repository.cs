@@ -327,5 +327,63 @@ namespace MensSection.API.Domain
 
         #endregion
 
+        #region User
+        public async Task<User?> GetUserByEmail(string email)
+        {
+            string sql = @"SELECT [Id],[Email],[PasswordHash],[PasswordSalt],[VerificationToken]
+		                    ,[VerifiedAt],[PasswordRestToken],[ResetTokenExpires]
+                            FROM [vgcms].[admin].[User] 
+                            WHERE [email]=@email";
+
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+                return (User?)(await db.QueryAsync<User?>(sql, new { email })).FirstOrDefault();
+        }
+
+        public async Task<User?> GetUserByToken(string token)
+        {
+            string sql = @"SELECT [Id],[Email],[PasswordHash],[PasswordSalt],[VerificationToken]
+		                    ,[VerifiedAt],[PasswordRestToken],[ResetTokenExpires]
+                            FROM [vgcms].[admin].[User] 
+                            WHERE VerificationToken=@token";
+
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+                return (User?)(await db.QueryAsync<User?>(sql, new { token })).FirstOrDefault();
+        }
+
+        public async Task<User?> GetUserByResetToken(string token)
+        {
+            string sql = @"SELECT [Id],[Email],[PasswordHash],[PasswordSalt],[VerificationToken]
+		                    ,[VerifiedAt],[PasswordRestToken],[ResetTokenExpires]
+                            FROM [vgcms].[admin].[User] 
+                            WHERE PasswordRestToken=@token";
+
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+                return (User?)(await db.QueryAsync<User?>(sql, new { token })).FirstOrDefault();
+        }
+
+        public async Task<User?> UserUpsert(User model)
+        {
+            using var con = new SqlConnection(ConnectionString);
+
+            using var cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "[admin].[UserUpsert]";
+            cmd.Parameters.AddWithValue("Email", model.Email);
+            cmd.Parameters.AddWithValue("PasswordHash", model.PasswordHash);
+            cmd.Parameters.AddWithValue("PasswordSalt", model.PasswordSalt);
+            cmd.Parameters.AddWithValue("VerificationToken", model.VerificationToken);
+            cmd.Parameters.AddWithValue("VerifiedAt", model.VerifiedAt);
+            cmd.Parameters.AddWithValue("PasswordResetToken", model.PasswordResetToken);
+            cmd.Parameters.AddWithValue("ResetTokenExpires", model.ResetTokenExpires);
+
+            cmd.CommandTimeout = 240;
+            con.Open();
+            await cmd.ExecuteNonQueryAsync();
+
+            //model.CourseDetailId = (int)cmd.Parameters["CourseDetailId"].Value;
+            return model;
+        }
+        #endregion
+
     }
 }
