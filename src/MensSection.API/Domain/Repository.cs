@@ -51,8 +51,10 @@ namespace MensSection.API.Domain
             using var con = new SqlConnection(ConnectionString);
             Dictionary<string, string> dict = new()
             {
-                {"Database",con.Database}
-                ,{"Server",con.DataSource}
+                { "Database", ConnectionString }
+                //{ "Database", con.Database }
+                //,
+                //{ "Server", con.DataSource }
             };
 
             return dict;
