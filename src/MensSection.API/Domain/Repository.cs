@@ -46,6 +46,18 @@ namespace MensSection.API.Domain
             } 
         }
 
+        public Dictionary<string, string> Info()
+        {
+            using var con = new SqlConnection(ConnectionString);
+            Dictionary<string, string> dict = new()
+            {
+                {"Database",con.Database}
+                ,{"Server",con.DataSource}
+            };
+
+            return dict;
+        }
+
         public async Task<int> ExecuteCommand(string cmdText)
         {
             try

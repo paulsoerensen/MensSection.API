@@ -5,6 +5,8 @@ namespace MensSection.API.Domain;
 
 public interface IRepository
 {
+    public Dictionary<string, string> Info();
+
     #region Club
     Task<Club?> GetClub(int id);
     Task<IEnumerable<Club>> GetClubs();

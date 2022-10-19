@@ -49,22 +49,36 @@ public class ClubEndpoint : IEndpointDefinition
     #region Club
     internal async Task<IResult> GetClub(IRepository repo, int clubId)
     {
-        var model = await repo.GetClub(clubId);
-        if (model != null)
+        try
         {
-            return Results.Ok(mapper.Map<ClubDto>(model));
+            var model = await repo.GetClub(clubId);
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<ClubDto>(model));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            return Results.BadRequest(e);
+        }
     }
     internal async Task<IResult> GetClubs(IRepository repo)
     {
-        var models = await repo.GetClubs();
-        if (models != null)
+        try
         {
-            var dtos = mapper.Map<IEnumerable<ClubDto>>(models);
-            return Results.Ok(mapper.Map<IEnumerable<ClubDto>>(models));
+            var models = await repo.GetClubs();
+            if (models != null)
+            {
+                var dtos = mapper.Map<IEnumerable<ClubDto>>(models);
+                return Results.Ok(mapper.Map<IEnumerable<ClubDto>>(models));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            return Results.BadRequest(e);
+        }
     }
     internal IResult UpsertClub(IRepository repo, Club dto) 
     {
