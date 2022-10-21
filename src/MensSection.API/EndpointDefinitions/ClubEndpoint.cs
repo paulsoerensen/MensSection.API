@@ -8,9 +8,15 @@ namespace MensSection.API.EndpointDefinitions;
 public class ClubEndpoint : IEndpointDefinition
 {
     private IMapper mapper;
+    private readonly ILogger<ClubEndpoint> _logger;
 
     public ClubEndpoint()
     {
+        ;
+    }
+    public ClubEndpoint(ILogger<ClubEndpoint> logger)
+    {
+        _logger = logger;
         mapper = new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<Club, ClubDto>()
@@ -60,6 +66,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
+            _logger.LogError(e.ToString());
             return Results.BadRequest(e);
         }
     }
@@ -77,49 +84,83 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
+            _logger.LogError(e.ToString());
             return Results.BadRequest(e);
         }
     }
-    internal IResult UpsertClub(IRepository repo, Club dto) 
+    internal IResult UpsertClub(IRepository repo, Club dto)
     {
-        var model = mapper.Map<Models.Club>(dto);
-        model = repo.ClubUpsert(model).Result;
-        if (model != null) {
-            return Results.Ok(mapper.Map<ClubDto>(model));
+        try
+        {
+            var model = mapper.Map<Models.Club>(dto);
+            model = repo.ClubUpsert(model).Result;
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<ClubDto>(model));
+            }
+            return Results.Created($"api/club/{model?.ClubId}", model);
         }
-        return Results.Created($"api/club/{model?.ClubId}", model);
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
     #endregion
 
     #region Course
     internal async Task<IResult> GetCourse(IRepository repo, int clubId)
     {
-        var model = await repo.GetClub(clubId);
-        if (model != null)
+        try
         {
-            return Results.Ok(mapper.Map<ClubDto>(model));
+            var model = await repo.GetClub(clubId);
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<ClubDto>(model));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
     internal async Task<IResult> GetCourses(IRepository repo, int clubId, int? courseId)
     {
-        var models = await repo.GetCourses(clubId, courseId);
-        if (models != null)
+        try
         {
-            var dtos = mapper.Map<IEnumerable<CourseDto>>(models);
-            return Results.Ok(mapper.Map<IEnumerable<CourseDto>>(models));
+            var models = await repo.GetCourses(clubId, courseId);
+            if (models != null)
+            {
+                var dtos = mapper.Map<IEnumerable<CourseDto>>(models);
+                return Results.Ok(mapper.Map<IEnumerable<CourseDto>>(models));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
     internal IResult UpsertCourse(IRepository repo, Club dto)
     {
-        var model = mapper.Map<MensSection.API.Models.Club>(dto);
-        model = repo.ClubUpsert(model).Result;
-        if (model != null)
+        try
         {
-            return Results.Ok(mapper.Map<ClubDto>(model));
+            var model = mapper.Map<MensSection.API.Models.Club>(dto);
+            model = repo.ClubUpsert(model).Result;
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<ClubDto>(model));
+            }
+            return Results.Created($"api/{model?.ClubId}/course/{model?.ClubId}", model);
         }
-        return Results.Created($"api/{model?.ClubId}/course/{model?.ClubId}", model);
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
 
     #endregion
@@ -127,42 +168,74 @@ public class ClubEndpoint : IEndpointDefinition
     #region Tee
     internal async Task<IResult> GetTee(IRepository repo, int teeId)
     {
-        var model = await repo.GetTee(teeId);
-        if (model != null)
+        try
         {
-            return Results.Ok(mapper.Map<ClubDto>(model));
+            var model = await repo.GetTee(teeId);
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<ClubDto>(model));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
     internal async Task<IResult> GetTees(IRepository repo)
     {
-        var models = await repo.GetTees();
-        if (models != null)
+        try
         {
-            return Results.Ok(models);
+            var models = await repo.GetTees();
+            if (models != null)
+            {
+                return Results.Ok(models);
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
 
     internal async Task<IResult> GetCourseTees(IRepository repo, int clubId)
     {
-        var models = await repo.GetClubs();
-        if (models != null)
+        try
         {
-            var dtos = mapper.Map<IEnumerable<ClubDto>>(models);
-            return Results.Ok(mapper.Map<IEnumerable<ClubDto>>(models));
+            var models = await repo.GetClubs();
+            if (models != null)
+            {
+                var dtos = mapper.Map<IEnumerable<ClubDto>>(models);
+                return Results.Ok(mapper.Map<IEnumerable<ClubDto>>(models));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
     internal IResult UpsertTee(IRepository repo, ListEntry dto)
     {
-        var model = mapper.Map<Models.Club>(dto);
-        model = repo.ClubUpsert(model).Result;
-        if (model != null)
+        try
         {
-            return Results.Ok(mapper.Map<ClubDto>(model));
+            var model = mapper.Map<Models.Club>(dto);
+            model = repo.ClubUpsert(model).Result;
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<ClubDto>(model));
+            }
+            return Results.Created($"api/{model?.ClubId}/course/{model?.ClubId}", model);
         }
-        return Results.Created($"api/{model?.ClubId}/course/{model?.ClubId}", model);
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            return Results.BadRequest(e);
+        }
     }
     #endregion
 }

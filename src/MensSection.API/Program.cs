@@ -4,6 +4,11 @@ using Microsoft.AspNetCore.Authorization;
 using MensSection.API.EndpointDefinitions;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+});
 
 builder.Services.AddEndpointDefinitions(typeof(MatchEndpoint));
 builder.Services.AddEndpointDefinitions(typeof(ClubEndpoint));
@@ -20,6 +25,8 @@ builder.Services.AddAuthorization(options =>
 });
 
 var app = builder.Build();
+app.Logger.LogInformation("Starting the app");
+
 app.UseEndpointDefinitions();
 
 app.UseHttpsRedirection();
