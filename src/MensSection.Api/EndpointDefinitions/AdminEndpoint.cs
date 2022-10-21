@@ -8,14 +8,9 @@ namespace MensSection.API.EndpointDefinitions;
 public class AdminEndpoint : IEndpointDefinition
 {
     private IMapper mapper;
-    private readonly ILogger<AdminEndpoint> _logger;
 
     public AdminEndpoint()
     {; }
-    public AdminEndpoint(ILogger<AdminEndpoint> logger)
-    {
-        _logger = logger;
-    }
 
     public void DefineEndpoints(WebApplication app)
     {
@@ -25,7 +20,7 @@ public class AdminEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
+            return Results.BadRequest(e.ToString());
         }
     }
 

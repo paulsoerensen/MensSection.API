@@ -8,15 +8,9 @@ namespace MensSection.API.EndpointDefinitions;
 public class ClubEndpoint : IEndpointDefinition
 {
     private IMapper mapper;
-    private readonly ILogger<ClubEndpoint> _logger;
 
     public ClubEndpoint()
     {
-        ;
-    }
-    public ClubEndpoint(ILogger<ClubEndpoint> logger)
-    {
-        _logger = logger;
         mapper = new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<Club, ClubDto>()
@@ -66,8 +60,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     internal async Task<IResult> GetClubs(IRepository repo)
@@ -84,8 +77,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     internal IResult UpsertClub(IRepository repo, Club dto)
@@ -102,8 +94,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     #endregion
@@ -122,8 +113,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     internal async Task<IResult> GetCourses(IRepository repo, int clubId, int? courseId)
@@ -140,8 +130,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     internal IResult UpsertCourse(IRepository repo, Club dto)
@@ -158,8 +147,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
 
@@ -179,8 +167,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     internal async Task<IResult> GetTees(IRepository repo)
@@ -196,8 +183,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
 
@@ -215,8 +201,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     internal IResult UpsertTee(IRepository repo, ListEntry dto)
@@ -233,8 +218,7 @@ public class ClubEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
-            return Results.BadRequest(e);
+            return Results.BadRequest(e.ToString());
         }
     }
     #endregion
