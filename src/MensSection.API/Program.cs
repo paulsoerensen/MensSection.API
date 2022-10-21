@@ -2,13 +2,17 @@ using MensSection.API.Domain;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using MensSection.API.EndpointDefinitions;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.ConfigureLogging(logging =>
-{
-    logging.ClearProviders();
-    logging.AddConsole();
-});
+
+// Apply logging 
+builder.Logging.ClearProviders();
+var path = builder.Configuration.GetValue<string>("LogPath");
+var logger = new LoggerConfiguration()
+    .WriteTo.File(path)
+    .CreateLogger();
+builder.Logging.AddSerilog(logger);
 
 builder.Services.AddEndpointDefinitions(typeof(MatchEndpoint));
 builder.Services.AddEndpointDefinitions(typeof(ClubEndpoint));

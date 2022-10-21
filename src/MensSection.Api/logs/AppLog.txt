@@ -1,0 +1,36 @@
+2022-10-21 23:11:32.177 +02:00 [INF] Starting the app
+2022-10-21 23:11:32.504 +02:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-21 23:11:32.887 +02:00 [INF] Now listening on: https://localhost:7138
+2022-10-21 23:11:32.887 +02:00 [INF] Now listening on: http://localhost:5248
+2022-10-21 23:11:32.887 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-21 23:11:32.887 +02:00 [INF] Hosting environment: Development
+2022-10-21 23:11:32.887 +02:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-10-21 23:11:34.617 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-10-21 23:11:35.457 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 868.2566ms
+2022-10-21 23:11:35.514 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-10-21 23:11:35.539 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 24.9154ms
+2022-10-21 23:11:36.006 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-10-21 23:11:36.500 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 494.6743ms
+2022-10-21 23:11:41.763 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/club - -
+2022-10-21 23:11:41.781 +02:00 [INF] Executing endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-21 23:11:59.065 +02:00 [INF] Writing value of type 'System.String' with status code '400'.
+2022-10-21 23:11:59.080 +02:00 [INF] Executed endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-21 23:11:59.080 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/club - - - 400 - application/json;+charset=utf-8 17316.8380ms
+2022-10-21 23:14:56.373 +02:00 [INF] Starting the app
+2022-10-21 23:14:56.822 +02:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-21 23:14:57.287 +02:00 [INF] Now listening on: https://localhost:7138
+2022-10-21 23:14:57.287 +02:00 [INF] Now listening on: http://localhost:5248
+2022-10-21 23:14:57.287 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-21 23:14:57.287 +02:00 [INF] Hosting environment: Development
+2022-10-21 23:14:57.287 +02:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-10-21 23:14:59.186 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-10-21 23:15:00.191 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 1017.1077ms
+2022-10-21 23:15:00.238 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-10-21 23:15:00.251 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 12.3807ms
+2022-10-21 23:15:00.487 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-10-21 23:15:01.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 721.4322ms
+2022-10-21 23:15:05.984 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/club - -
+2022-10-21 23:15:06.001 +02:00 [INF] Executing endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-21 23:15:23.283 +02:00 [INF] Writing value of type 'System.String' with status code '400'.
+2022-10-21 23:15:23.292 +02:00 [INF] Executed endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-21 23:15:23.293 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/club - - - 400 - application/json;+charset=utf-8 17308.4636ms

@@ -20,7 +20,7 @@ public class AdminEndpoint : IEndpointDefinition
         }
         catch (Exception e)
         {
-            return Results.BadRequest(e.ToString());
+            ;
         }
     }
 
