@@ -15,8 +15,9 @@ public class AdminEndpoint : IEndpointDefinition
     public void DefineEndpoints(WebApplication app)
     {
         try
-        { 
+        {
             app.MapGet("api/admin/info", GetInfo);
+            app.MapGet("api/admin/test", GetTest);
         }
         catch (Exception e)
         {
@@ -40,6 +41,11 @@ public class AdminEndpoint : IEndpointDefinition
         );
         return Results.Ok(s);
     }
+    internal async Task<IResult> GetTest(IRepository repo)
+    {
+        return Results.Ok("Some string");
+    }
+
     #endregion
 }
 
