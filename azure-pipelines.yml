@@ -26,7 +26,7 @@ steps:
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
-- script: dotnet build --configuration $(buildConfiguration) --self-contained --arch x86
+- script: dotnet build --configuration $(buildConfiguration) --self-contained --runtime x86
   displayName: 'Build .NET 6 Application'
 
 - task: DotNetCoreCLI@2
