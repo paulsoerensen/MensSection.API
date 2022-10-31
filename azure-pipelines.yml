@@ -34,6 +34,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
+    projects: 'src/MensSection.Api/MensSection.Api.csproj'
     arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
     
