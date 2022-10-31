@@ -33,8 +33,7 @@ steps:
   displayName: 'dotnet publish --configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
   inputs:
     command: publish
-    publishWebProjects: false
-    projects: 'src/MensSection.Api/MensSection.Api.csproj'
+    publishWebProjects: true
     arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
     
