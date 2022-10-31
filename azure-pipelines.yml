@@ -30,9 +30,10 @@ steps:
   displayName: 'Build .NET 6 Application'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet publish '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
   inputs:
     command: publish
-    publishWebProjects: true
+    publishWebProjects: false
     arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
     
