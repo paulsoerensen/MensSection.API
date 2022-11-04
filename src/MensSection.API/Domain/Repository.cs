@@ -21,9 +21,10 @@ namespace MensSection.API.Domain
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             SqlConnectionStringBuilder builder = new(ConnectionString);
 
+            _logger.LogInformation(config.GetConnectionString("SqlDbConnectionString"));
             builder.ConnectionString = config.GetConnectionString("SqlDbConnectionString");
-            builder.UserID = config["UserId"];
-            builder.Password = config["Password"];
+            builder.UserID = "paulsweb_dk"; // config["UserId"];
+            builder.Password = "passiv"; // config["Password"];
             ConnectionString = builder.ConnectionString;
         }
 

@@ -34,3 +34,81 @@
 2022-10-21 23:15:23.283 +02:00 [INF] Writing value of type 'System.String' with status code '400'.
 2022-10-21 23:15:23.292 +02:00 [INF] Executed endpoint 'HTTP: GET api/club => GetClubs'
 2022-10-21 23:15:23.293 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/club - - - 400 - application/json;+charset=utf-8 17308.4636ms
+2022-10-24 20:01:01.673 +02:00 [INF] Starting the app
+2022-10-24 20:01:02.125 +02:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-24 20:01:02.918 +02:00 [INF] Now listening on: https://localhost:7138
+2022-10-24 20:01:02.919 +02:00 [INF] Now listening on: http://localhost:5248
+2022-10-24 20:01:02.919 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-24 20:01:02.919 +02:00 [INF] Hosting environment: Development
+2022-10-24 20:01:02.919 +02:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-10-24 20:01:04.778 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-10-24 20:01:06.113 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-10-24 20:01:06.127 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 12.3809ms
+2022-10-24 20:01:06.127 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 1359.8238ms
+2022-10-24 20:01:06.729 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-10-24 20:01:07.093 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 363.7741ms
+2022-10-24 20:01:11.422 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-10-24 20:01:11.444 +02:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-10-24 20:02:17.605 +02:00 [INF] Starting the app
+2022-10-24 20:02:17.930 +02:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-24 20:02:18.328 +02:00 [INF] Now listening on: https://localhost:7138
+2022-10-24 20:02:18.328 +02:00 [INF] Now listening on: http://localhost:5248
+2022-10-24 20:02:18.328 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-24 20:02:18.328 +02:00 [INF] Hosting environment: Development
+2022-10-24 20:02:18.329 +02:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-10-24 20:02:19.778 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-10-24 20:02:20.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-10-24 20:02:20.951 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 20.2681ms
+2022-10-24 20:02:20.951 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 1185.8190ms
+2022-10-24 20:02:21.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-10-24 20:02:21.836 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 364.4579ms
+2022-10-24 20:02:30.512 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-10-24 20:02:30.532 +02:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-10-24 20:05:37.810 +02:00 [INF] Starting the app
+2022-10-24 20:05:38.069 +02:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-24 20:05:38.419 +02:00 [INF] Now listening on: https://localhost:7138
+2022-10-24 20:05:38.419 +02:00 [INF] Now listening on: http://localhost:5248
+2022-10-24 20:05:38.420 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-24 20:05:38.420 +02:00 [INF] Hosting environment: Development
+2022-10-24 20:05:38.420 +02:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-10-24 20:05:40.144 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-10-24 20:05:41.053 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 923.4312ms
+2022-10-24 20:05:41.127 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-10-24 20:05:41.140 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 12.6515ms
+2022-10-24 20:05:41.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-10-24 20:05:41.761 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 374.0448ms
+2022-10-24 20:05:54.081 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-10-24 20:05:54.095 +02:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-10-24 20:06:14.230 +02:00 [INF] Writing value of type 'System.String' with status code '200'.
+2022-10-24 20:06:14.235 +02:00 [INF] Executed endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-10-24 20:06:14.236 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/admin/info - - - 200 - application/json;+charset=utf-8 20155.1024ms
+2022-10-24 20:06:24.711 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/club - -
+2022-10-24 20:06:24.714 +02:00 [INF] Executing endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-24 20:06:52.753 +02:00 [INF] Writing value of type 'System.String' with status code '400'.
+2022-10-24 20:06:52.756 +02:00 [INF] Executed endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-24 20:06:52.756 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/club - - - 400 - application/json;+charset=utf-8 28045.4839ms
+2022-10-24 20:07:34.618 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/club - -
+2022-10-24 20:07:34.618 +02:00 [INF] Executing endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-24 20:07:35.945 +02:00 [INF] Writing value of type 'System.String' with status code '400'.
+2022-10-24 20:07:35.945 +02:00 [INF] Executed endpoint 'HTTP: GET api/club => GetClubs'
+2022-10-24 20:07:35.946 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/club - - - 400 - application/json;+charset=utf-8 1328.0641ms
+2022-10-24 20:12:06.320 +02:00 [INF] Starting the app
+2022-10-24 20:12:06.650 +02:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-24 20:12:07.186 +02:00 [INF] Now listening on: https://localhost:7138
+2022-10-24 20:12:07.186 +02:00 [INF] Now listening on: http://localhost:5248
+2022-10-24 20:12:07.186 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-24 20:12:07.186 +02:00 [INF] Hosting environment: Development
+2022-10-24 20:12:07.186 +02:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-10-24 20:12:08.995 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-10-24 20:12:10.146 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-10-24 20:12:10.166 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 19.5190ms
+2022-10-24 20:12:10.175 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 1190.6756ms
+2022-10-24 20:12:10.567 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-10-24 20:12:11.110 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 543.4214ms
+2022-10-24 20:12:18.263 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-10-24 20:12:18.282 +02:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-10-24 20:12:22.371 +02:00 [INF] Writing value of type 'System.String' with status code '200'.
+2022-10-24 20:12:22.381 +02:00 [INF] Executed endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-10-24 20:12:22.381 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/admin/info - - - 200 - application/json;+charset=utf-8 4117.3445ms
+2022-10-24 20:12:33.964 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-10-24 20:12:33.967 +02:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
