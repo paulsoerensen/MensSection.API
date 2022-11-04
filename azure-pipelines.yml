@@ -29,27 +29,3 @@ steps:
     includePreviewVersions: true
 - script: dotnet build --configuration $(BuildConfiguration) -
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet publish --configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
-  inputs:
-    command: publish
-    publishWebProjects: true
-    arguments: '--output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: false
-    
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-
-- task: FtpUpload@2
-  displayName: "FTP upload"
-  inputs:
-    credentialsOption: inputs
-    serverurl: "ftp://paulsweb.dk"
-    username: "paulsweb.dk"
-    password: "passiv"
-    remoteDirectory: "/test"
-    trustSSL: true
-    cleanContents: true
-    rootDirectory: $(Build.artifactstagingdirectory)
