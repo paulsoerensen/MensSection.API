@@ -35,7 +35,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: true
-    arguments: '--output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
     
 - task: PublishBuildArtifacts@1
