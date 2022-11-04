@@ -23,11 +23,11 @@ steps:
     restoreSolution: '$(solution)'
 
 - task: UseDotNet@2
+  displayName: 'Build .NET 6 Application'
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
 - script: dotnet build --configuration $(BuildConfiguration) -
-  displayName: 'Build .NET 6 Application'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish --configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
