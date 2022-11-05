@@ -8,6 +8,7 @@ namespace MensSection.API.EndpointDefinitions;
 public class MatchEndpoint : IEndpointDefinition
 {
     private IMapper mapper;
+    private readonly ILogger<MatchEndpoint> _logger;
     public MatchEndpoint()
     {
         mapper = new MapperConfiguration(cfg =>

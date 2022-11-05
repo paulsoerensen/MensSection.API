@@ -9,6 +9,7 @@ namespace MensSection.API.EndpointDefinitions;
 public class PlayerEndpoint : IEndpointDefinition
 {
     private IMapper mapper;
+    private readonly ILogger<PlayerEndpoint> _logger;
 
     public PlayerEndpoint()
     {

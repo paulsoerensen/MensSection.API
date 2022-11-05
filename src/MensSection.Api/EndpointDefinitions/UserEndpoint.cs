@@ -10,6 +10,7 @@ namespace MensSection.API.EndpointDefinitions;
 public class UserEndpoint : IEndpointDefinition
 {
     private IMapper mapper;
+    private ILogger<UserEndpoint>? _logger;
 
     public UserEndpoint()
     {
