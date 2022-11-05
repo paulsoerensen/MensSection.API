@@ -13,7 +13,7 @@ variables:
   buildConfiguration: 'Release'
   dotNetFramework: 'net6.0'
   dotNetVersion: '6.0.x'
-  targetRuntime: 'win-x64'
+  targetRuntime: 'win-x86'
 
 steps:
 - task: NuGetToolInstaller@1
