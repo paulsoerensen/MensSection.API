@@ -8,16 +8,20 @@ namespace MensSection.API.EndpointDefinitions;
 
 public class AdminEndpoint : IEndpointDefinition
 {
+    private ILogger? _logger;
+    private IConfiguration? _config;
     public void DefineEndpoints(WebApplication app)
     {
         try
         {
             app.MapGet("api/admin/info", GetInfo);
             app.MapGet("api/admin/test", GetTest);
+            _logger = app.Logger;
+            _config = app.Configuration;
         }
         catch (Exception e)
         {
-            ;// _logger.LogError(e.ToString());
+            _logger.LogError(e.ToString());
         }
     }
     public void DefineServices(IServiceCollection services)
@@ -34,7 +38,16 @@ public class AdminEndpoint : IEndpointDefinition
             Environment.NewLine,
             repo.Info().Select(pair => $"{pair.Key}={pair.Value}").ToArray()
         );
-        return Results.Ok(s);
+        try
+        {
+            _logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
+            return Results.Ok(s);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e.ToString());
+            throw;
+        }
     }
     internal IResult GetTest(IRepository repo)
     {
