@@ -52,5 +52,5 @@ steps:
     password: "passiv"
     remoteDirectory: "/test"
     trustSSL: true
-    cleanContents: false
+    cleanContents: true
     rootDirectory: $(Build.artifactstagingdirectory)
