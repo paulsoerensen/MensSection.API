@@ -21,17 +21,17 @@ namespace MensSection.API.Domain
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             SqlConnectionStringBuilder builder = new(ConnectionString);
 
-            foreach (System.Configuration.ConnectionStringSettings css in System.Configuration.ConfigurationManager.ConnectionStrings)
-            {
-                logger.LogInformation(css.ConnectionString);
-                // encryption part
-                // rewriting the connectionString in the app.config or however you want ot be done 
-            }
-            string connString = "";
-            if (System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"] != null)
-                connString = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"].ConnectionString;
+            //foreach (System.Configuration.ConnectionStringSettings css in System.Configuration.ConfigurationManager.ConnectionStrings)
+            //{
+            //    logger.LogInformation(css.ConnectionString);
+            //    // encryption part
+            //    // rewriting the connectionString in the app.config or however you want ot be done 
+            //}
+            //if (System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"] != null)
+            //    connString = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"].ConnectionString;
 
-            logger.LogInformation(connString);
+            string connString = config.GetConnectionString("SqlDbConnectionString");
+            _logger.LogInformation($"first read: {connString}");
             _logger.LogInformation(config.GetConnectionString("SqlDbConnectionString"));
             builder.ConnectionString = connString; //  config.GetConnectionString("SqlDbConnectionString");
             builder.UserID = "paulsweb_dk"; // config["UserId"];

@@ -40,29 +40,29 @@ public class AdminEndpoint : IEndpointDefinition
     {
         return Results.Ok("Some string");
     }
-    static void ReadAllSettings()
-    {
-        try
-        {
-            var appSettings = System.Configuration.ConfigurationManager.AppSettings;
+    //static void ReadAllSettings()
+    //{
+    //    try
+    //    {
+    //        var appSettings = System.Configuration.ConfigurationManager.AppSettings;
 
-            if (appSettings.Count == 0)
-            {
-                Console.WriteLine("AppSettings is empty.");
-            }
-            else
-            {
-                foreach (var key in appSettings.AllKeys)
-                {
-                    Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);
-                }
-            }
-        }
-        catch (ConfigurationErrorsException)
-        {
-            Console.WriteLine("Error reading app settings");
-        }
-    }
+    //        if (appSettings.Count == 0)
+    //        {
+    //            Console.WriteLine("AppSettings is empty.");
+    //        }
+    //        else
+    //        {
+    //            foreach (var key in appSettings.AllKeys)
+    //            {
+    //                Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);
+    //            }
+    //        }
+    //    }
+    //    catch (ConfigurationErrorsException)
+    //    {
+    //        Console.WriteLine("Error reading app settings");
+    //    }
+    //}
     #endregion
 }
 

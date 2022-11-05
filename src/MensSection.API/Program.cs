@@ -8,9 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Apply logging 
 builder.Logging.ClearProviders();
+
 var path = builder.Configuration.GetValue<string>("LogPath");
 var logger = new LoggerConfiguration()
-    .WriteTo.File(path)
+    .WriteTo.File(path, rollingInterval: RollingInterval.Day)
     .CreateLogger();
 builder.Logging.AddSerilog(logger);
 
