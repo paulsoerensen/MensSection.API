@@ -40,7 +40,10 @@ public class AdminEndpoint : IEndpointDefinition
         );
         try
         {
-            _logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
+            s = (_config as IConfigurationRoot).GetDebugView();
+            //return ctx.Response.WriteAsync(config);
+            //_logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
+            _logger.LogInformation(s);
             return Results.Ok(s);
         }
         catch (Exception e)
