@@ -44,12 +44,14 @@ public class AdminEndpoint : IEndpointDefinition
             //return ctx.Response.WriteAsync(config);
             //_logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
             _logger.LogInformation(s);
+            s = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"].ConnectionString;
+            _logger.LogInformation($"From ConfigurationManager:{s}} ");
             return Results.Ok(s);
         }
         catch (Exception e)
         {
             _logger.LogError(e.ToString());
-            throw;
+            return Results.BadRequest(e.ToString());
         }
     }
     internal IResult GetTest(IRepository repo)
