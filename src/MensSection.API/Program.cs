@@ -15,6 +15,9 @@ var logger = new LoggerConfiguration()
     .CreateLogger();
 builder.Logging.AddSerilog(logger);
 
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
 builder.Services.AddEndpointDefinitions(typeof(MatchEndpoint));
 builder.Services.AddEndpointDefinitions(typeof(ClubEndpoint));
 
