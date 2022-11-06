@@ -32,3 +32,243 @@
 2022-11-06 10:26:51.178 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 15.6033ms
 2022-11-06 10:26:51.366 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
 2022-11-06 10:26:51.858 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 492.3917ms
+2022-11-06 13:05:23.396 +01:00 [INF] Starting the app
+2022-11-06 13:05:24.390 +01:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-06 13:05:25.213 +01:00 [INF] Now listening on: https://localhost:7138
+2022-11-06 13:05:25.213 +01:00 [INF] Now listening on: http://localhost:5248
+2022-11-06 13:05:25.213 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-06 13:05:25.213 +01:00 [INF] Hosting environment: Development
+2022-11-06 13:05:25.213 +01:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-11-06 13:05:26.759 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-11-06 13:05:27.957 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 1214.3050ms
+2022-11-06 13:05:28.076 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-11-06 13:05:28.088 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 11.7119ms
+2022-11-06 13:05:28.425 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-11-06 13:05:29.026 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 602.7976ms
+2022-11-06 13:06:01.642 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-11-06 13:06:01.694 +01:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-11-06 13:06:01.929 +01:00 [INF] first read: Server=localhost,14331;Initial Catalog=vgcms
+2022-11-06 13:06:01.929 +01:00 [INF] Server=localhost,14331;Initial Catalog=vgcms
+2022-11-06 13:06:01.992 +01:00 [INF] Final : Data Source=localhost,14331;Initial Catalog=vgcms;User ID=paulsweb_dk;Password=passiv
+2022-11-06 13:06:02.363 +01:00 [INF] :
+  ASPNETCORE_BROWSER_TOOLS=true (EnvironmentVariablesConfigurationProvider Prefix: '')
+AllowedHosts=* (JsonConfigurationProvider for 'appsettings.json' (Optional))
+ALLUSERSPROFILE=C:\ProgramData (EnvironmentVariablesConfigurationProvider Prefix: '')
+APPDATA=C:\Users\pas\AppData\Roaming (EnvironmentVariablesConfigurationProvider Prefix: '')
+applicationName=MensSection.Api (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+ASPNETCORE_AUTO_RELOAD_WS_ENDPOINT=ws://localhost:60691/MensSection.Api/ (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_AUTO_RELOAD_WS_KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv1cs4axOP5EbfhW++G/NyhpmwhRqA4Sf6GsDfO6W8Q0Iwrc/lCBQOI4ClSHrCmoW7S6mAmSdGPk1ckVW/gT3j2oU5/0IVB3mTpoWYhYY/VEnifEhRfun4Tmtpp8ZNWyzcDS3AKEDo2Zfz71L69/9LUXh8ddT3iZf0oda5Qh+tO4OrzG6qKjMag6kMNrUBTh1sMhEXQBho+3C4osT6RR8K5ehHmJZrYZ30d5nwhNUkHQwA8y3r5hJuqmaHs7TmMVn4Bwift5zqp4S19BrcE3u92JKUjfysbnvvZnvnNeSdePDX6ctOPdruRf8Mjuw0mPrYE59zVhf5GyYRvqgO5w7gQIDAQAB (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_ENVIRONMENT=Development (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.Watch.BrowserRefresh;Microsoft.WebTools.BrowserLink.Net (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_HTTPS_PORT=7138 (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_URLS=https://localhost:7138;http://localhost:5248 (EnvironmentVariablesConfigurationProvider Prefix: '')
+AUTO_RELOAD_WS_ENDPOINT=ws://localhost:60691/MensSection.Api/ (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+AUTO_RELOAD_WS_KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv1cs4axOP5EbfhW++G/NyhpmwhRqA4Sf6GsDfO6W8Q0Iwrc/lCBQOI4ClSHrCmoW7S6mAmSdGPk1ckVW/gT3j2oU5/0IVB3mTpoWYhYY/VEnifEhRfun4Tmtpp8ZNWyzcDS3AKEDo2Zfz71L69/9LUXh8ddT3iZf0oda5Qh+tO4OrzG6qKjMag6kMNrUBTh1sMhEXQBho+3C4osT6RR8K5ehHmJZrYZ30d5nwhNUkHQwA8y3r5hJuqmaHs7TmMVn4Bwift5zqp4S19BrcE3u92JKUjfysbnvvZnvnNeSdePDX6ctOPdruRf8Mjuw0mPrYE59zVhf5GyYRvqgO5w7gQIDAQAB (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+ChocolateyInstall=C:\ProgramData\chocolatey (EnvironmentVariablesConfigurationProvider Prefix: '')
+ChocolateyLastPathUpdate=132944397299819630 (EnvironmentVariablesConfigurationProvider Prefix: '')
+CommonProgramFiles=C:\Program Files\Common Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+CommonProgramW6432=C:\Program Files\Common Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPLUS_ForceENC=1 (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPLUS_GCHeapCount=2 (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPLUS_GCNoAffinitize=1 (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPUTERNAME=NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+ComSpec=C:\WINDOWS\system32\cmd.exe (EnvironmentVariablesConfigurationProvider Prefix: '')
+ConnectionStrings:
+  SqlDbConnectionString=Server=localhost,14331;Initial Catalog=vgcms (JsonConfigurationProvider for 'appsettings.Development.json' (Optional))
+contentRoot=C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\ (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+Debug:
+  LogLevel:
+    Default=Information (JsonConfigurationProvider for 'appsettings.json' (Optional))
+    Microsoft.Hosting=Trace (JsonConfigurationProvider for 'appsettings.json' (Optional))
+DOTNET_HOTRELOAD_NAMEDPIPE_NAME=ca026993-0ec9-495e-965d-7885ad908b95 (EnvironmentVariablesConfigurationProvider Prefix: '')
+DOTNET_MODIFIABLE_ASSEMBLIES=debug (EnvironmentVariablesConfigurationProvider Prefix: '')
+DOTNET_STARTUP_HOOKS=C:\Program Files\dotnet\SDK\6.0.110\DotnetTools\dotnet-watch\6.0.110-servicing.22476.46\tools\net6.0\any\middleware\Microsoft.AspNetCore.Watch.BrowserRefresh.dll;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Web Tools\Browser Link\Microsoft.WebTools.BrowserLink.Net.dll (EnvironmentVariablesConfigurationProvider Prefix: '')
+DriverData=C:\Windows\System32\Drivers\DriverData (EnvironmentVariablesConfigurationProvider Prefix: '')
+ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO=1 (EnvironmentVariablesConfigurationProvider Prefix: '')
+ENVIRONMENT=Development (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+ForceIdentityAuthenticationType=Embedded (EnvironmentVariablesConfigurationProvider Prefix: '')
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer (EnvironmentVariablesConfigurationProvider Prefix: '')
+FPS_BROWSER_USER_PROFILE_STRING=Default (EnvironmentVariablesConfigurationProvider Prefix: '')
+GCExpConfigUsedInSession=3 (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOME=C:\Users\pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOMEDRIVE=C: (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOMEPATH=\Users\pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.Watch.BrowserRefresh;Microsoft.WebTools.BrowserLink.Net (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+HOTRELOAD_NAMEDPIPE_NAME=ca026993-0ec9-495e-965d-7885ad908b95 (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+HTTPS_PORT=7138 (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+LOCALAPPDATA=C:\Users\pas\AppData\Local (EnvironmentVariablesConfigurationProvider Prefix: '')
+Logging:
+  LogLevel:
+    Default=Information (JsonConfigurationProvider for 'appsettings.Development.json' (Optional))
+    Microsoft.AspNetCore=Warning (JsonConfigurationProvider for 'appsettings.Development.json' (Optional))
+LOGONSERVER=\\NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+LogPath=logs/AppLog.txt (JsonConfigurationProvider for 'appsettings.json' (Optional))
+MODIFIABLE_ASSEMBLIES=debug (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+MSBuildLoadMicrosoftTargetsReadOnly=true (EnvironmentVariablesConfigurationProvider Prefix: '')
+NUMBER_OF_PROCESSORS=4 (EnvironmentVariablesConfigurationProvider Prefix: '')
+OneDrive=C:\Users\pas\OneDrive (EnvironmentVariablesConfigurationProvider Prefix: '')
+OneDriveConsumer=C:\Users\pas\OneDrive (EnvironmentVariablesConfigurationProvider Prefix: '')
+OS=Windows_NT (EnvironmentVariablesConfigurationProvider Prefix: '')
+Password=passiV5705 (JsonConfigurationProvider for 'secrets.json' (Optional))
+Path=C:\Program Files\Microsoft Visual Studio\2022\Professional\common7\ide\commoneXtensions\microsoft\teamfoundation\team explorer\NativeBinaries\amd64;C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\PuTTY\;C:\Program Files\PowerShell\7\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Users\pas\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\pas\AppData\Local\Programs\Python\Python37-32\;C:\Users\pas\AppData\Local\Microsoft\WindowsApps;C:\Users\pas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Users\pas\.dotnet\tools;C:\Users\pas\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;C:\Users\pas\.nuget\packages\microsoft.extensions.apidescription.server\6.0.5\tools (EnvironmentVariablesConfigurationProvider Prefix: '')
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL (EnvironmentVariablesConfigurationProvider Prefix: '')
+PkgDefApplicationConfigFile=C:\Users\pas\AppData\Local\Microsoft\VisualStudio\17.0_39f1f542\devenv.exe.config (EnvironmentVariablesConfigurationProvider Prefix: '')
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_ARCHITECTURE=AMD64 (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_LEVEL=6 (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_REVISION=3d04 (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramData=C:\ProgramData (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramFiles=C:\Program Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramFiles(x86)=C:\Program Files (x86) (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramW6432=C:\Program Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+PSModulePath=C:\Users\pas\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\PowerShell\Modules\ (EnvironmentVariablesConfigurationProvider Prefix: '')
+PUBLIC=C:\Users\Public (EnvironmentVariablesConfigurationProvider Prefix: '')
+ServiceHubLogSessionKey=80AF0819 (EnvironmentVariablesConfigurationProvider Prefix: '')
+SESSIONNAME=Console (EnvironmentVariablesConfigurationProvider Prefix: '')
+SignInWithHomeTenantOnly=False (EnvironmentVariablesConfigurationProvider Prefix: '')
+STARTUP_HOOKS=C:\Program Files\dotnet\SDK\6.0.110\DotnetTools\dotnet-watch\6.0.110-servicing.22476.46\tools\net6.0\any\middleware\Microsoft.AspNetCore.Watch.BrowserRefresh.dll;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Web Tools\Browser Link\Microsoft.WebTools.BrowserLink.Net.dll (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+SystemDrive=C: (EnvironmentVariablesConfigurationProvider Prefix: '')
+SystemRoot=C:\WINDOWS (EnvironmentVariablesConfigurationProvider Prefix: '')
+TEMP=C:\Users\pas\AppData\Local\Temp (EnvironmentVariablesConfigurationProvider Prefix: '')
+ThreadedWaitDialogDpiContext=-4 (EnvironmentVariablesConfigurationProvider Prefix: '')
+TMP=C:\Users\pas\AppData\Local\Temp (EnvironmentVariablesConfigurationProvider Prefix: '')
+URLS=https://localhost:7138;http://localhost:5248 (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+USERDOMAIN=NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+USERDOMAIN_ROAMINGPROFILE=NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+UserId=sa (JsonConfigurationProvider for 'secrets.json' (Optional))
+USERNAME=pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+USERPROFILE=C:\Users\pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+VisualStudioDir=C:\Users\pas\Documents\Visual Studio 2022 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VisualStudioEdition=Microsoft Visual Studio Professional 2022 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VisualStudioVersion=17.0 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSAPPIDDIR=C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\ (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSAPPIDNAME=devenv.exe (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSLANG=1033 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSLS_SESSION_KEEPALIVE_INTERVAL=0 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSSKUEDITION=Professional (EnvironmentVariablesConfigurationProvider Prefix: '')
+windir=C:\WINDOWS (EnvironmentVariablesConfigurationProvider Prefix: '')
+
+2022-11-06 13:07:03.297 +01:00 [INF] Starting the app
+2022-11-06 13:07:03.584 +01:00 [INF] User profile is available. Using 'C:\Users\pas\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-06 13:07:04.107 +01:00 [INF] Now listening on: https://localhost:7138
+2022-11-06 13:07:04.107 +01:00 [INF] Now listening on: http://localhost:5248
+2022-11-06 13:07:04.107 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-06 13:07:04.107 +01:00 [INF] Hosting environment: Development
+2022-11-06 13:07:04.107 +01:00 [INF] Content root path: C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\
+2022-11-06 13:07:05.790 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/index.html - -
+2022-11-06 13:07:07.075 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/index.html - - - 200 - text/html;charset=utf-8 1233.3987ms
+2022-11-06 13:07:07.086 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - -
+2022-11-06 13:07:07.105 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/_framework/aspnetcore-browser-refresh.js - - - 200 11949 application/javascript;+charset=utf-8 19.7480ms
+2022-11-06 13:07:07.389 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - -
+2022-11-06 13:07:07.864 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 473.3073ms
+2022-11-06 13:07:39.676 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7138/api/admin/info - -
+2022-11-06 13:07:39.693 +01:00 [INF] Executing endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-11-06 13:07:39.838 +01:00 [INF] first read: Server=localhost,14331;Initial Catalog=vgcms
+2022-11-06 13:07:39.838 +01:00 [INF] Server=localhost,14331;Initial Catalog=vgcms
+2022-11-06 13:07:39.880 +01:00 [INF] Final : Data Source=localhost,14331;Initial Catalog=vgcms;User ID=paulsweb_dk;Password=passiv
+2022-11-06 13:07:40.088 +01:00 [INF] :
+  ASPNETCORE_BROWSER_TOOLS=true (EnvironmentVariablesConfigurationProvider Prefix: '')
+AllowedHosts=* (JsonConfigurationProvider for 'appsettings.json' (Optional))
+ALLUSERSPROFILE=C:\ProgramData (EnvironmentVariablesConfigurationProvider Prefix: '')
+APPDATA=C:\Users\pas\AppData\Roaming (EnvironmentVariablesConfigurationProvider Prefix: '')
+applicationName=MensSection.Api (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+ASPNETCORE_AUTO_RELOAD_WS_ENDPOINT=ws://localhost:60691/MensSection.Api/ (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_AUTO_RELOAD_WS_KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv1cs4axOP5EbfhW++G/NyhpmwhRqA4Sf6GsDfO6W8Q0Iwrc/lCBQOI4ClSHrCmoW7S6mAmSdGPk1ckVW/gT3j2oU5/0IVB3mTpoWYhYY/VEnifEhRfun4Tmtpp8ZNWyzcDS3AKEDo2Zfz71L69/9LUXh8ddT3iZf0oda5Qh+tO4OrzG6qKjMag6kMNrUBTh1sMhEXQBho+3C4osT6RR8K5ehHmJZrYZ30d5nwhNUkHQwA8y3r5hJuqmaHs7TmMVn4Bwift5zqp4S19BrcE3u92JKUjfysbnvvZnvnNeSdePDX6ctOPdruRf8Mjuw0mPrYE59zVhf5GyYRvqgO5w7gQIDAQAB (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_ENVIRONMENT=Development (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.Watch.BrowserRefresh;Microsoft.WebTools.BrowserLink.Net (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_HTTPS_PORT=7138 (EnvironmentVariablesConfigurationProvider Prefix: '')
+ASPNETCORE_URLS=https://localhost:7138;http://localhost:5248 (EnvironmentVariablesConfigurationProvider Prefix: '')
+AUTO_RELOAD_WS_ENDPOINT=ws://localhost:60691/MensSection.Api/ (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+AUTO_RELOAD_WS_KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv1cs4axOP5EbfhW++G/NyhpmwhRqA4Sf6GsDfO6W8Q0Iwrc/lCBQOI4ClSHrCmoW7S6mAmSdGPk1ckVW/gT3j2oU5/0IVB3mTpoWYhYY/VEnifEhRfun4Tmtpp8ZNWyzcDS3AKEDo2Zfz71L69/9LUXh8ddT3iZf0oda5Qh+tO4OrzG6qKjMag6kMNrUBTh1sMhEXQBho+3C4osT6RR8K5ehHmJZrYZ30d5nwhNUkHQwA8y3r5hJuqmaHs7TmMVn4Bwift5zqp4S19BrcE3u92JKUjfysbnvvZnvnNeSdePDX6ctOPdruRf8Mjuw0mPrYE59zVhf5GyYRvqgO5w7gQIDAQAB (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+ChocolateyInstall=C:\ProgramData\chocolatey (EnvironmentVariablesConfigurationProvider Prefix: '')
+ChocolateyLastPathUpdate=132944397299819630 (EnvironmentVariablesConfigurationProvider Prefix: '')
+CommonProgramFiles=C:\Program Files\Common Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+CommonProgramW6432=C:\Program Files\Common Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPLUS_ForceENC=1 (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPLUS_GCHeapCount=2 (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPLUS_GCNoAffinitize=1 (EnvironmentVariablesConfigurationProvider Prefix: '')
+COMPUTERNAME=NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+ComSpec=C:\WINDOWS\system32\cmd.exe (EnvironmentVariablesConfigurationProvider Prefix: '')
+ConnectionStrings:
+  SqlDbConnectionString=Server=localhost,14331;Initial Catalog=vgcms (JsonConfigurationProvider for 'appsettings.Development.json' (Optional))
+contentRoot=C:\Users\pas\source\repos\MensSection.API\src\MensSection.Api\ (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+Debug:
+  LogLevel:
+    Default=Information (JsonConfigurationProvider for 'appsettings.json' (Optional))
+    Microsoft.Hosting=Trace (JsonConfigurationProvider for 'appsettings.json' (Optional))
+DOTNET_HOTRELOAD_NAMEDPIPE_NAME=919755ca-95a6-4304-8aff-0426231372d9 (EnvironmentVariablesConfigurationProvider Prefix: '')
+DOTNET_MODIFIABLE_ASSEMBLIES=debug (EnvironmentVariablesConfigurationProvider Prefix: '')
+DOTNET_STARTUP_HOOKS=C:\Program Files\dotnet\SDK\6.0.110\DotnetTools\dotnet-watch\6.0.110-servicing.22476.46\tools\net6.0\any\middleware\Microsoft.AspNetCore.Watch.BrowserRefresh.dll;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Web Tools\Browser Link\Microsoft.WebTools.BrowserLink.Net.dll (EnvironmentVariablesConfigurationProvider Prefix: '')
+DriverData=C:\Windows\System32\Drivers\DriverData (EnvironmentVariablesConfigurationProvider Prefix: '')
+ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO=1 (EnvironmentVariablesConfigurationProvider Prefix: '')
+ENVIRONMENT=Development (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+ForceIdentityAuthenticationType=Embedded (EnvironmentVariablesConfigurationProvider Prefix: '')
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer (EnvironmentVariablesConfigurationProvider Prefix: '')
+FPS_BROWSER_USER_PROFILE_STRING=Default (EnvironmentVariablesConfigurationProvider Prefix: '')
+GCExpConfigUsedInSession=3 (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOME=C:\Users\pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOMEDRIVE=C: (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOMEPATH=\Users\pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+HOSTINGSTARTUPASSEMBLIES=Microsoft.AspNetCore.Watch.BrowserRefresh;Microsoft.WebTools.BrowserLink.Net (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+HOTRELOAD_NAMEDPIPE_NAME=919755ca-95a6-4304-8aff-0426231372d9 (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+HTTPS_PORT=7138 (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+LOCALAPPDATA=C:\Users\pas\AppData\Local (EnvironmentVariablesConfigurationProvider Prefix: '')
+Logging:
+  LogLevel:
+    Default=Information (JsonConfigurationProvider for 'appsettings.Development.json' (Optional))
+    Microsoft.AspNetCore=Warning (JsonConfigurationProvider for 'appsettings.Development.json' (Optional))
+LOGONSERVER=\\NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+LogPath=logs/AppLog.txt (JsonConfigurationProvider for 'appsettings.json' (Optional))
+MODIFIABLE_ASSEMBLIES=debug (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+MSBuildLoadMicrosoftTargetsReadOnly=true (EnvironmentVariablesConfigurationProvider Prefix: '')
+NUMBER_OF_PROCESSORS=4 (EnvironmentVariablesConfigurationProvider Prefix: '')
+OneDrive=C:\Users\pas\OneDrive (EnvironmentVariablesConfigurationProvider Prefix: '')
+OneDriveConsumer=C:\Users\pas\OneDrive (EnvironmentVariablesConfigurationProvider Prefix: '')
+OS=Windows_NT (EnvironmentVariablesConfigurationProvider Prefix: '')
+Password=passiV5705 (JsonConfigurationProvider for 'secrets.json' (Optional))
+Path=C:\Program Files\Microsoft Visual Studio\2022\Professional\common7\ide\commoneXtensions\microsoft\teamfoundation\team explorer\NativeBinaries\amd64;C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\PuTTY\;C:\Program Files\PowerShell\7\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Users\pas\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\pas\AppData\Local\Programs\Python\Python37-32\;C:\Users\pas\AppData\Local\Microsoft\WindowsApps;C:\Users\pas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Users\pas\.dotnet\tools;C:\Users\pas\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;C:\Users\pas\.nuget\packages\microsoft.extensions.apidescription.server\6.0.5\tools (EnvironmentVariablesConfigurationProvider Prefix: '')
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL (EnvironmentVariablesConfigurationProvider Prefix: '')
+PkgDefApplicationConfigFile=C:\Users\pas\AppData\Local\Microsoft\VisualStudio\17.0_39f1f542\devenv.exe.config (EnvironmentVariablesConfigurationProvider Prefix: '')
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_ARCHITECTURE=AMD64 (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_LEVEL=6 (EnvironmentVariablesConfigurationProvider Prefix: '')
+PROCESSOR_REVISION=3d04 (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramData=C:\ProgramData (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramFiles=C:\Program Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramFiles(x86)=C:\Program Files (x86) (EnvironmentVariablesConfigurationProvider Prefix: '')
+ProgramW6432=C:\Program Files (EnvironmentVariablesConfigurationProvider Prefix: '')
+PSModulePath=C:\Users\pas\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\PowerShell\Modules\ (EnvironmentVariablesConfigurationProvider Prefix: '')
+PUBLIC=C:\Users\Public (EnvironmentVariablesConfigurationProvider Prefix: '')
+ServiceHubLogSessionKey=80AF0819 (EnvironmentVariablesConfigurationProvider Prefix: '')
+SESSIONNAME=Console (EnvironmentVariablesConfigurationProvider Prefix: '')
+SignInWithHomeTenantOnly=False (EnvironmentVariablesConfigurationProvider Prefix: '')
+STARTUP_HOOKS=C:\Program Files\dotnet\SDK\6.0.110\DotnetTools\dotnet-watch\6.0.110-servicing.22476.46\tools\net6.0\any\middleware\Microsoft.AspNetCore.Watch.BrowserRefresh.dll;C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Web Tools\Browser Link\Microsoft.WebTools.BrowserLink.Net.dll (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+SystemDrive=C: (EnvironmentVariablesConfigurationProvider Prefix: '')
+SystemRoot=C:\WINDOWS (EnvironmentVariablesConfigurationProvider Prefix: '')
+TEMP=C:\Users\pas\AppData\Local\Temp (EnvironmentVariablesConfigurationProvider Prefix: '')
+ThreadedWaitDialogDpiContext=-4 (EnvironmentVariablesConfigurationProvider Prefix: '')
+TMP=C:\Users\pas\AppData\Local\Temp (EnvironmentVariablesConfigurationProvider Prefix: '')
+URLS=https://localhost:7138;http://localhost:5248 (Microsoft.Extensions.Configuration.ChainedConfigurationProvider)
+USERDOMAIN=NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+USERDOMAIN_ROAMINGPROFILE=NUC (EnvironmentVariablesConfigurationProvider Prefix: '')
+UserId=sa (JsonConfigurationProvider for 'secrets.json' (Optional))
+USERNAME=pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+USERPROFILE=C:\Users\pas (EnvironmentVariablesConfigurationProvider Prefix: '')
+VisualStudioDir=C:\Users\pas\Documents\Visual Studio 2022 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VisualStudioEdition=Microsoft Visual Studio Professional 2022 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VisualStudioVersion=17.0 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSAPPIDDIR=C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\ (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSAPPIDNAME=devenv.exe (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSLANG=1033 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSLS_SESSION_KEEPALIVE_INTERVAL=0 (EnvironmentVariablesConfigurationProvider Prefix: '')
+VSSKUEDITION=Professional (EnvironmentVariablesConfigurationProvider Prefix: '')
+windir=C:\WINDOWS (EnvironmentVariablesConfigurationProvider Prefix: '')
+
+2022-11-06 13:07:40.683 +01:00 [INF] From ConfigurationManager:
+2022-11-06 13:07:40.692 +01:00 [INF] Executing result with status code '200'.
+2022-11-06 13:07:40.694 +01:00 [INF] Executed endpoint 'HTTP: GET api/admin/info => GetInfo'
+2022-11-06 13:07:40.695 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7138/api/admin/info - - - 200 0 - 1021.1504ms

@@ -44,7 +44,7 @@ public class AdminEndpoint : IEndpointDefinition
             //return ctx.Response.WriteAsync(config);
             //_logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
             _logger.LogInformation(s);
-            s = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"].ConnectionString;
+            s = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"]?.ConnectionString;
             _logger.LogInformation($"From ConfigurationManager:{s}");
             return Results.Ok(s);
         }
