@@ -46,6 +46,9 @@ public class AdminEndpoint : IEndpointDefinition
             _logger.LogInformation(s);
             s = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"]?.ConnectionString;
             _logger.LogInformation($"From ConfigurationManager:{s}");
+            s = _config["ConnectionStrings:SqlDbConnectionString"];
+            _logger.LogInformation($"From Config:{s}");
+
             return Results.Ok(s);
         }
         catch (Exception e)
