@@ -33,7 +33,7 @@ namespace MensSection.API.Domain
             string connString = config.GetConnectionString("SqlDbConnectionString");
             _logger.LogInformation($"first read: {connString}");
             _logger.LogInformation(config.GetConnectionString("SqlDbConnectionString"));
-            builder.ConnectionString = connString; //  config.GetConnectionString("SqlDbConnectionString");
+            builder.ConnectionString = "Server=mssql1.unoeuro.com;Database=paulsweb_dk_db"; //  config.GetConnectionString("SqlDbConnectionString");
             builder.UserID = "paulsweb_dk"; // config["UserId"];
             builder.Password = "passiv"; // config["Password"];
             ConnectionString = builder.ConnectionString;
