@@ -31,26 +31,9 @@ steps:
 
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish --configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
+  displayName: 'dotnet publish -p:PublishProfile=FTPProfile'
   inputs:
     command: publish
     publishWebProjects: false
-    arguments: '-p:PublishProfile=FTPProfile'
+    arguments: '--p:PublishProfile=FTPProfile'
     zipAfterPublish: false
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-
-- task: FtpUpload@2
-  displayName: "FTP upload"
-  inputs:
-    credentialsOption: inputs
-    serverurl: "ftp://paulsweb.dk"
-    username: "paulsweb.dk"
-    password: "passiv"
-    remoteDirectory: "/test"
-    trustSSL: true
-    cleanContents: true
-    rootDirectory: $(Build.artifactstagingdirectory)
