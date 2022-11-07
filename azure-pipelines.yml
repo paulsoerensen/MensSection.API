@@ -35,9 +35,13 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
+    arguments: '-p:PublishProfile=FTPProfile'
     zipAfterPublish: false
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
 
 - task: FtpUpload@2
   displayName: "FTP upload"
