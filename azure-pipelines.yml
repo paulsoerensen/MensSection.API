@@ -22,18 +22,22 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: UseDotNet@2
-  displayName: 'Build .NET 6 Application'
-  inputs:
-    version: $(dotNetVersion)
-    includePreviewVersions: true
-- script: dotnet build --configuration $(BuildConfiguration) 
-
-
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish -p:PublishProfile=FTPProfile'
+  displayName: 'dotnet publish --configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
   inputs:
     command: publish
     publishWebProjects: false
-    arguments: '--p:PublishProfile=FTPProfile'
+    arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
+
+- task: FtpUpload@2
+  displayName: "FTP upload"
+  inputs:
+    credentialsOption: inputs
+    serverurl: "ftp://paulsweb.dk"
+    username: "paulsweb.dk"
+    password: "passiv"
+    remoteDirectory: "/test"
+    trustSSL: true
+    cleanContents: true
+    rootDirectory: $(Build.artifactstagingdirectory)
