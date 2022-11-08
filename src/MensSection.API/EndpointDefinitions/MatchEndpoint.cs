@@ -1,19 +1,18 @@
 using AutoMapper;
-using MensSection.API.Domain;
-using MensSection.API.Dtos;
-using MensSection.API.Models;
+using MensSection.Api.Domain;
+using MensSection.Api.Dtos;
+using MensSection.Api.Models;
 
-namespace MensSection.API.EndpointDefinitions;
+namespace MensSection.Api.EndpointDefinitions;
 
-public class MatchEndpoint : IEndpointDefinition
+public class MatchEndpoint : EndpointBase
 {
     private IMapper mapper;
-    private readonly ILogger<MatchEndpoint> _logger;
     public MatchEndpoint()
     {
         mapper = new MapperConfiguration(cfg =>
         {
-            cfg.CreateMap<Player, PlayerDto>()
+            cfg.CreateMap<Match, MatchDto>()
                 //.ForMember(dest => dest.Year,
                 //            opts => opts.MapFrom(src => new DateTime(src.Year, 1, 1)))
                 //.ForMember(dest => dest.ConsumptionkWh,
@@ -22,53 +21,83 @@ public class MatchEndpoint : IEndpointDefinition
         }).CreateMapper();
     }
 
-    public void DefineEndpoints(WebApplication app)
+    public override void DefineEndpoints(WebApplication app)
     {
-        app.MapGet("api/match/{id}", GetMatch);
-        app.MapGet("api/match", GetMatches); 
-        app.MapGet("api/match/season/{season}", GetSeasonMatches); 
-        app.MapPost("api/match", UpsertMatch);      
+        base.DefineEndpoints(app);
+
+        app.MapGet("api/match/{id:int}", GetMatch);
+        app.MapGet("api/match", GetMatches);
+        app.MapGet("api/match/season/{season:int}", GetSeasonMatches);
+        app.MapPost("api/match", UpsertMatch);
     }
 
-    public void DefineServices(IServiceCollection services)
-    {
-        services.AddScoped<IRepository, Repository>();
-    }
- 
     internal async Task<IResult> GetMatch(IRepository repo, int id)
     {
-        var match = await repo.GetMatch(id);
-        if (match != null) {
-            return Results.Ok(mapper.Map<MatchDto>(match));
+        try
+        {
+            var match = await repo.GetMatch(id);
+            if (match != null)
+            {
+                return Results.Ok(mapper.Map<MatchDto>(match));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();        
+        catch (Exception e)
+        {
+            return Results.BadRequest(e);
+        }
     }
 
-    internal async Task<IResult> GetMatches(IRepository repo) 
+    internal async Task<IResult> GetMatches(IRepository repo)
     {
-        var models = await repo.GetMatchList();
-        if (models != null) {
-            return Results.Ok(mapper.Map<IEnumerable<MatchDto>>(models));
+        _logger.LogInformation("Getmatches");
+        try
+        {
+            var models = await repo.GetMatchList();
+            if (models != null)
+            {
+                return Results.Ok(mapper.Map<IEnumerable<MatchDto>>(models));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
-    }        
+        catch (Exception e)
+        {
+            return Results.BadRequest(e);
+        }
+    }
 
-    internal async Task<IResult> GetSeasonMatches(IRepository repo, int season) 
+    internal async Task<IResult> GetSeasonMatches(int season, IRepository repo)
     {
-        var models = await repo.GetSeasonMatchList(season);
-        if (models != null) {
-            return Results.Ok(mapper.Map<IEnumerable<MatchDto>>(models));
+        try
+        {
+            var models = await repo.GetSeasonMatchList(season);
+            if (models != null)
+            {
+                return Results.Ok(mapper.Map<IEnumerable<MatchDto>>(models));
+            }
+            return Results.NotFound();
         }
-        return Results.NotFound();
-    }        
-    internal async Task<IResult> UpsertMatch(IRepository repo, Models.Match dto) 
+        catch (Exception e)
+        {
+            return Results.BadRequest(e);
+        }
+    }
+    internal async Task<IResult> UpsertMatch(IRepository repo, Models.Match dto)
     {
-        var model = mapper.Map<Models.Match>(dto);
-        model = await repo.MatchUpsert(model);
-        if (model != null) {
-            return Results.Ok(mapper.Map<MatchDto>(model));
+        try
+        {
+            var model = mapper.Map<Models.Match>(dto);
+            model = await repo.MatchUpsert(model);
+            if (model != null)
+            {
+                return Results.Ok(mapper.Map<MatchDto>(model));
+            }
+            return Results.Created($"api/match/{model?.MatchId}", model);
         }
-        return Results.Created($"api/match/{model?.MatchId}", model);
-    }        
+        catch (Exception e)
+        {
+            return Results.BadRequest(e);
+        }
+    }
 }
 

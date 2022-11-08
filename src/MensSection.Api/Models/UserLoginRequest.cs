@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MensSection.API.Models
+namespace MensSection.Api.Models
 {
     public class UserLoginRequest
     {

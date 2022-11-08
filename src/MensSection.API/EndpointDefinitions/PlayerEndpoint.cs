@@ -1,15 +1,14 @@
 using AutoMapper;
-using MensSection.API.Domain;
-using MensSection.API.Dtos;
-using MensSection.API.Models;
+using MensSection.Api.Domain;
+using MensSection.Api.Dtos;
+using MensSection.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MensSection.API.EndpointDefinitions;
+namespace MensSection.Api.EndpointDefinitions;
 
-public class PlayerEndpoint : IEndpointDefinition
+public class PlayerEndpoint : EndpointBase
 {
     private IMapper mapper;
-    private readonly ILogger<PlayerEndpoint> _logger;
 
     public PlayerEndpoint()
     {
@@ -19,17 +18,14 @@ public class PlayerEndpoint : IEndpointDefinition
                 .ReverseMap();
         }).CreateMapper();
     }
-    public void DefineEndpoints(WebApplication app)
+    public override void DefineEndpoints(WebApplication app)
     {
+        base.DefineEndpoints(app);
+        
         app.MapGet("api/player", GetSeasonPlayers);
-        app.MapGet("api/player/{vgcNo}", GetPlayer);
+        app.MapGet("api/player/{vgcNo:int}", GetPlayer);
         app.MapPost("api/player", UpsertPlayer);
         app.MapPut("api/player", UpsertPlayer);
-    }
-
-    public void DefineServices(IServiceCollection services)
-    {
-        services.AddScoped<IRepository, Repository>();
     }
 
     #region Club

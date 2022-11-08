@@ -1,5 +1,5 @@
 ﻿
-namespace MensSection.API.Models
+namespace MensSection.Api.Models
 {
     //public class Pair<T1, T2>
     //{

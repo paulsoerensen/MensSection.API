@@ -1,7 +1,7 @@
-using MensSection.API.Domain;
+using MensSection.Api.Domain;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using MensSection.API.EndpointDefinitions;
+using MensSection.Api.EndpointDefinitions;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

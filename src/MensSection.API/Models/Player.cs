@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace MensSection.API.Models
+namespace MensSection.Api.Models
 {
     public class Player
     {

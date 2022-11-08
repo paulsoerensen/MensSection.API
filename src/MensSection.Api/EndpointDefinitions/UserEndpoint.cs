@@ -1,16 +1,15 @@
 using AutoMapper;
-using MensSection.API.Domain;
-using MensSection.API.Dtos;
-using MensSection.API.Models;
+using MensSection.Api.Domain;
+using MensSection.Api.Dtos;
+using MensSection.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
-namespace MensSection.API.EndpointDefinitions;
+namespace MensSection.Api.EndpointDefinitions;
 
-public class UserEndpoint : IEndpointDefinition
+public class UserEndpoint : EndpointBase
 {
     private IMapper mapper;
-    private ILogger<UserEndpoint>? _logger;
 
     public UserEndpoint()
     {
@@ -20,8 +19,10 @@ public class UserEndpoint : IEndpointDefinition
             //    .ReverseMap();
         }).CreateMapper();
     }
-    public void DefineEndpoints(WebApplication app)
+    public override void DefineEndpoints(WebApplication app)
     {
+        base.DefineEndpoints(app);
+        
         app.MapGet("api/user/{email}", GetUserByEmail);
         app.MapPost("api/user/register", Register);
         app.MapPost("api/user/verify", Verify);

@@ -1,4 +1,4 @@
-﻿namespace MensSection.API.Dtos
+﻿namespace MensSection.Api.Dtos
 {
     public class ClubDto
     {

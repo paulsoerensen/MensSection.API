@@ -1,32 +1,25 @@
 using AutoMapper;
-using MensSection.API.Domain;
-using MensSection.API.Dtos;
-using MensSection.API.Models;
+using MensSection.Api.Domain;
+using MensSection.Api.Dtos;
+using MensSection.Api.Models;
 using System.Configuration;
 
-namespace MensSection.API.EndpointDefinitions;
+namespace MensSection.Api.EndpointDefinitions;
 
-public class AdminEndpoint : IEndpointDefinition
+public class AdminEndpoint : EndpointBase
 {
-    private ILogger? _logger;
-    private IConfiguration? _config;
-    public void DefineEndpoints(WebApplication app)
+    public override void DefineEndpoints(WebApplication app)
     {
+        base.DefineEndpoints(app);
         try
         {
             app.MapGet("api/admin/info", GetInfo);
             app.MapGet("api/admin/test", GetTest);
-            _logger = app.Logger;
-            _config = app.Configuration;
         }
         catch (Exception e)
         {
             _logger.LogError(e.ToString());
         }
-    }
-    public void DefineServices(IServiceCollection services)
-    {
-        services.AddScoped<IRepository, Repository>();
     }
 
     #region Club
@@ -40,7 +33,7 @@ public class AdminEndpoint : IEndpointDefinition
         );
         try
         {
-            s = (_config as IConfigurationRoot).GetDebugView();
+            s = (_config as IConfigurationRoot).GetDebugView2();
             //return ctx.Response.WriteAsync(config);
             //_logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
             _logger.LogInformation(s);

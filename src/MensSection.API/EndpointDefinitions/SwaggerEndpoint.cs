@@ -1,18 +1,20 @@
 
-using MensSection.API.Domain;
+using MensSection.Api.Domain;
 
 namespace  MensSection.Api.EndpointDefinitions;
 
-public class SwaggerEndpoint : IEndpointDefinition
+public class SwaggerEndpoint : EndpointBase
 {
-    public void DefineEndpoints(WebApplication app)
+    public override void DefineEndpoints(WebApplication app)
     {
+        base.DefineEndpoints(app);
+        
         app.UseSwagger();
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MensSection.Api"));
 
     }
     private static bool alreadyAdded;
-    public void DefineServices(IServiceCollection services)
+    public override void DefineServices(IServiceCollection services)
     {
         if (alreadyAdded) return;
         services.AddEndpointsApiExplorer();

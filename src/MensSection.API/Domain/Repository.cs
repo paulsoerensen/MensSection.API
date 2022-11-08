@@ -1,11 +1,11 @@
 using AutoMapper;
 using Dapper;
-using MensSection.API.Models;
+using MensSection.Api.Models;
 using System.Data;
 using System.Data.SqlClient;
 
 
-namespace MensSection.API.Domain
+namespace MensSection.Api.Domain
 {
     public class Repository : IRepository
     {

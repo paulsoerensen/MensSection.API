@@ -1,4 +1,4 @@
-﻿namespace MensSection.API.Models
+﻿namespace MensSection.Api.Models
 {
     public class Club
     {

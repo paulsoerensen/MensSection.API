@@ -1,11 +1,11 @@
 using AutoMapper;
-using MensSection.API.Domain;
-using MensSection.API.Dtos;
-using MensSection.API.Models;
+using MensSection.Api.Domain;
+using MensSection.Api.Dtos;
+using MensSection.Api.Models;
 
-namespace MensSection.API.EndpointDefinitions;
+namespace MensSection.Api.EndpointDefinitions;
 
-public class ClubEndpoint : IEndpointDefinition
+public class ClubEndpoint : EndpointBase
 {
     private IMapper mapper;
 
@@ -24,26 +24,23 @@ public class ClubEndpoint : IEndpointDefinition
 
         }).CreateMapper();
     }
-    public void DefineEndpoints(WebApplication app)
+    public override void DefineEndpoints(WebApplication app)
     {
+        base.DefineEndpoints(app);
+
         app.MapGet("api/club", GetClubs);
-        app.MapGet("api/club/{clubId}", GetClub);
+        app.MapGet("api/club/{clubId:int}", GetClub);
         app.MapPost("api/club", UpsertClub);
         app.MapPut("api/club", UpsertClub);
 
-        app.MapGet("api/club/{clubId}/course", GetCourses);
-        app.MapPost("api/club/{clubId}/course", UpsertCourse);
-        app.MapPut("api/club/{clubId}/course", UpsertCourse);
+        app.MapGet("api/club/{clubId:int}/course", GetCourses);
+        app.MapPost("api/club/{clubId:int}/course", UpsertCourse);
+        app.MapPut("api/club/{clubId:int}/course", UpsertCourse);
 
         app.MapGet("api/tee", GetTees);
-        app.MapGet("api/tee/{teeId}", GetTee);
+        app.MapGet("api/tee/{teeId:int}", GetTee);
         app.MapPost("api/tee", UpsertTee);
         app.MapPut("api/tee", UpsertTee);
-    }
-
-    public void DefineServices(IServiceCollection services)
-    {
-        services.AddScoped<IRepository, Repository>();
     }
 
     #region Club
@@ -137,7 +134,7 @@ public class ClubEndpoint : IEndpointDefinition
     {
         try
         {
-            var model = mapper.Map<MensSection.API.Models.Club>(dto);
+            var model = mapper.Map<MensSection.Api.Models.Club>(dto);
             model = repo.ClubUpsert(model).Result;
             if (model != null)
             {

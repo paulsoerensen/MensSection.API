@@ -1,4 +1,4 @@
-namespace MensSection.API.Domain;
+namespace MensSection.Api.Domain;
 public interface IEndpointDefinition
 {
     void DefineServices(IServiceCollection

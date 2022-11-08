@@ -1,5 +1,5 @@
 
-namespace MensSection.API.Domain;
+namespace MensSection.Api.Domain;
 public static class EndpointDefinitionExtension
 {
     public static void AddEndpointDefinitions(
