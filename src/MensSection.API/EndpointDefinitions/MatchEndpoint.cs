@@ -50,7 +50,7 @@ public class MatchEndpoint : EndpointBase
 
     internal async Task<IResult> GetMatches(IRepository repo)
     {
-        _logger.LogInformation("Getmatches");
+        _logger?.LogInformation("Getmatches");
         try
         {
             var models = await repo.GetMatchList();

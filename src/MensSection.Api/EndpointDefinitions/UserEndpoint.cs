@@ -31,11 +31,6 @@ public class UserEndpoint : EndpointBase
         app.MapPost("api/user/resetpassword", ResetPassword);
     }
 
-    public void DefineServices(IServiceCollection services)
-    {
-        services.AddScoped<IRepository, Repository>();
-    }
-
     #region Club
     internal async Task<IResult> GetUserByEmail(IRepository repo, string email)
     {

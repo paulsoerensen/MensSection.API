@@ -18,12 +18,12 @@ public class AdminEndpoint : EndpointBase
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
+            _logger?.LogError(e.ToString());
         }
     }
 
-    #region Club
-    internal async Task<IResult> GetInfo(IRepository repo)
+    #region Info
+    internal IResult GetInfo(IRepository repo)
     {
         var s = //string.Join(Environment.NewLine, repo.Info());
         string.Join
@@ -33,20 +33,20 @@ public class AdminEndpoint : EndpointBase
         );
         try
         {
-            s = (_config as IConfigurationRoot).GetDebugView2();
+            s = (_config as IConfigurationRoot)?.GetDebugView();
             //return ctx.Response.WriteAsync(config);
             //_logger.LogInformation(_config.GetConnectionString("SqlDbConnectionString"));
-            _logger.LogInformation(s);
+            _logger?.LogInformation(s);
             //s = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"]?.ConnectionString;
             //_logger.LogInformation($"From ConfigurationManager:{s}");
-            s = _config["ConnectionStrings:SqlDbConnectionString"];
-            _logger.LogInformation($"From Config:{s}");
+            s = _config?["ConnectionStrings:SqlDbConnectionString"];
+            _logger?.LogInformation($"From Config:{s}");
 
             return Results.Ok(s);
         }
         catch (Exception e)
         {
-            _logger.LogError(e.ToString());
+            _logger?.LogError(e.ToString());
             return Results.BadRequest(e.ToString());
         }
     }
