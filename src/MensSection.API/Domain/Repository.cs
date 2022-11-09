@@ -30,14 +30,10 @@ namespace MensSection.Api.Domain
             //if (System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"] != null)
             //    connString = System.Configuration.ConfigurationManager.ConnectionStrings["SqlDbConnectionString"].ConnectionString;
 
-            string connString = config.GetConnectionString("SqlDbConnectionString");
-            _logger.LogInformation($"first read: {connString}");
-            _logger.LogInformation(config.GetConnectionString("SqlDbConnectionString"));
-            builder.ConnectionString = "Server=mssql1.unoeuro.com;Database=paulsweb_dk_db"; //  config.GetConnectionString("SqlDbConnectionString");
-            builder.UserID = "paulsweb_dk"; // config["UserId"];
+            builder.ConnectionString = config.GetConnectionString("SqlDbConnectionString");
+            builder.UserID = config["UserId"];
             builder.Password = "passiv"; // config["Password"];
             ConnectionString = builder.ConnectionString;
-            logger.LogInformation($"Final : {ConnectionString}");
         }
 
         #region Database stuff
@@ -189,7 +185,7 @@ namespace MensSection.Api.Domain
         public async Task<ListEntry?> GetTee(int teeId)
         {
             string sql = @"SELECT  [CourseTeeId] as [Key]
-                    ,[Tee] as [Value] 
+                    ,RTrim([Tee]) as [Value] 
                     FROM [ms].[CourseTee]
                     where [CourseTeeId] = @teeId";
 
@@ -199,7 +195,7 @@ namespace MensSection.Api.Domain
         public async Task<IEnumerable<ListEntry>> GetTees()
         {
             string sql = @"SELECT  [CourseTeeId] as [Key]
-                    ,[Tee] as [Value] 
+                    ,RTrim([Tee]) as [Value] 
                     FROM [ms].[CourseTee]";
 
             using (IDbConnection db = new SqlConnection(ConnectionString))
@@ -229,7 +225,7 @@ namespace MensSection.Api.Domain
         {
             string sql = @"select  
                 [MatchId],[MatchDate],[MatchForm],[MatchText],[Sponsor],[SponsorLogoId],[CourseName]
-                ,[Par],[Tee],[CourseRating],[Slope],[Remarks],[Official],[ClubName],[MatchformId]
+                ,[Par],RTrim([Tee]) as Tee,[CourseRating],[Slope],[Remarks],[Official],[ClubName],[MatchformId]
                 , [CourseDetailId],[MatchRowversion],[Shootout] 
                  from [ms].[vMatch] where MatchId = @id";
 
@@ -241,7 +237,7 @@ namespace MensSection.Api.Domain
         {
             string sql = @"select  
                 [MatchId],[MatchDate],[MatchForm],[MatchText],[Sponsor],[SponsorLogoId],[CourseName]
-                ,[Par],[Tee],[CourseRating],[Slope],[Remarks],[Official],[ClubName],[MatchformId]
+                ,[Par],RTrim([Tee]) as Tee,[CourseRating],[Slope],[Remarks],[Official],[ClubName],[MatchformId]
                 , [CourseDetailId],[MatchRowversion],[Shootout] 
                  from [ms].[vMatch]";
 
